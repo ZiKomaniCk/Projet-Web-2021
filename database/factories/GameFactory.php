@@ -21,16 +21,3 @@ $factory->define(Game::class, function (Faker $faker) {
                                                 'Playsation 1', 'Nintendo Switch', 'Nintendo Wii'])
     ];
 });
-
-// $table->id();
-//             $table->string('name');
-//             $table->integer('price');
-//             $table->integer('rate');
-//             $table->string('activationCode'); // AZftuIG41084fEj0hkZSef450682
-//             $table->string('pathImage');
-//             $table->string('description');
-//             $table->date('releaseDate');
-//             $table->string('company');
-//             $table->integer('pegi');
-//             $table->string('platform');
-//             $table->timestamps();
