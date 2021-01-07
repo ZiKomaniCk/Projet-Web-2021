@@ -9,7 +9,7 @@ $factory->define(Game::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         'price' => $faker->numberBetween($min = 30, $max = 70),
-        'rate' => $faker->numberBetween($min = 0, $max = 20),
+        'score' => $faker->numberBetween($min = 0, $max = 20),
         'activationCode' => $faker->swiftBicNumber,
         'pathImage' => $faker->imageUrl($width = 640, $height = 480),
         'description' => $faker->text($maxNbChars = 250),

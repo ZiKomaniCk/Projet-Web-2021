@@ -17,7 +17,7 @@ class CreateGamesTable extends Migration
             $table->id();
             $table->string('name');
             $table->integer('price');
-            $table->integer('rate');
+            $table->integer('score');
             $table->string('activationCode'); // AZftuIG41084fEj0hkZSef450682
             $table->string('pathImage');
             $table->longText('description');
