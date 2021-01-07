@@ -20,7 +20,7 @@ class CreateGamesTable extends Migration
             $table->integer('rate');
             $table->string('activationCode'); // AZftuIG41084fEj0hkZSef450682
             $table->string('pathImage');
-            $table->string('description');
+            $table->longText('description');
             $table->date('releaseDate');
             $table->string('company');
             $table->integer('pegi');

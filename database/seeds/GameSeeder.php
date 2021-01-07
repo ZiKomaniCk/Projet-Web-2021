@@ -1,5 +1,6 @@
 <?php
 
+use App\Game;
 use Illuminate\Database\Seeder;
 
 class GameSeeder extends Seeder
@@ -11,6 +12,6 @@ class GameSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(Game::class, 15)->create();
     }
 }
