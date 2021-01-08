@@ -4,10 +4,15 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\User;
+use App\Role;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +20,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::all();
+        return view('admin.users.index', ['users' => $users]);
     }
 
     /**
@@ -26,7 +32,10 @@ class UsersController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        $roles = Role::all();
+        return view('admin.users.edit', [
+            'roles' => $roles, 
+            'user' => $user]);
     }
 
     /**
