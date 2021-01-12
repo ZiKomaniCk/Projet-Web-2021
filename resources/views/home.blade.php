@@ -17,7 +17,7 @@
                     {{ __('You are logged in!') }}
                     
 
-                    <p>baise tes moers</p>
+                    <p>pardon</p>
                 </div>
             </div>
         </div>
