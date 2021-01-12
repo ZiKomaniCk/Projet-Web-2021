@@ -15,9 +15,7 @@
                     @endif
 
                     {{ __('You are logged in!') }}
-                    
 
-                  <p>on test</p>
                 </div>
 
                 <div class="card mb-3" style="max-width: 540px;">
