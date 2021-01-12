@@ -54,6 +54,16 @@ class UsersController extends Controller
         $user->nickname = $request->nickname;
         $user->credit = $request->credit;
         $user->email = $request->email;
+        
+        if ($request->hasFile('imgPath')){
+            $file = $request->file('imgPath');
+            $user->imgPath = '/images/users/' . $file->getClientOriginalName();
+            $file->move(public_path('\images\users/'), $file->getClientOriginalName());
+        }else{
+            $user->imgPath = '/images/users/profileDefault.png';
+
+        }
+        
         $user->save();
 
         return redirect(route('admin.users.index'));

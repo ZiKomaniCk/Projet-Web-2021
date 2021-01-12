@@ -73,8 +73,11 @@ class RegisterController extends Controller
             'nickname' => $data['nickname'],
             'credit' => $data['credit'],
             'email' => $data['email'],
+            'imgPath' => '/images/users/profileDefault.png',
             'password' => Hash::make($data['password']),
         ]);
+
+        
 
         $role = Role::select('id')->where('name', 'user')->first();
 
