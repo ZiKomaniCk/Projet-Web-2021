@@ -5,7 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\User;
 use App\Role;
+use Facade\FlareClient\Stacktrace\File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File as FacadesFile;
+use Illuminate\Support\Facades\Storage;
 
 class UsersController extends Controller
 {
@@ -57,11 +60,16 @@ class UsersController extends Controller
         
         if ($request->hasFile('imgPath')){
             $file = $request->file('imgPath');
+            
+            // if(file_exists(public_path($user->imgPath) == true && $user->imgPath != '/images/users/profileDefault.png')){
+            //     unlink(public_path($user->imgPath));
+            // }
+            // Storage::delete('public' . $user->imgPath);
+            FacadesFile::delete('public' . $user->imgPath);
             $user->imgPath = '/images/users/' . $file->getClientOriginalName();
             $file->move(public_path('\images\users/'), $file->getClientOriginalName());
         }else{
             $user->imgPath = '/images/users/profileDefault.png';
-
         }
         
         $user->save();

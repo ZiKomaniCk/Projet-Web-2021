@@ -31,7 +31,7 @@
                             <label for="imgPath" class="col-md-4 col-form-label text-md-right">{{ __('Profil Image') }}</label>
                             
                             <div class="col-md-6">
-                                <input id="imgPath" type="file" class="form-control" name="imgPath" value="{{ $user->imgPath ?? '' }}" >
+                                <input id="imgPath" type="file" class="form-control" name="imgPath"  >
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary">Update</button>
