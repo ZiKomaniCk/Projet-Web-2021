@@ -25,6 +25,9 @@ class UsersController extends Controller
      */
     public function index()
     {
+        if(FacadesGate::denies('manage-users')){
+            return redirect(route('home'));
+        }
         $users = User::all();
         return view('admin.users.index', ['users' => $users]);
     }
@@ -90,6 +93,9 @@ class UsersController extends Controller
      */
     public function destroy(User $user)
     {
+        if(FacadesGate::denies('manage-users')){
+            return redirect(route('home'));
+        }
         $user->roles()->detach();
         $user->delete();
 

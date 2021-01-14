@@ -13,20 +13,39 @@
                         @method('PUT')
                         @include('auth.partials.form', ['routeName' => ''])
 
-                        <div class="form-group row">
-                            <label for="roles" class="col-md-4 col-form-label text-md-right">Roles</label>
-                            <div class="col-md-6">
-                                @foreach ($roles as $role)
+                        @if ($user->hasRole('admin'))
+                            <div class="form-group row">
+                                <label for="roles" class="col-md-4 col-form-label text-md-right">Roles</label>
+                                <div class="col-md-6">
+                                    @foreach ($roles as $role)
                                     <div>
                                         <input type="checkbox" name="roles[]" id="role-{{ $role->id }}" value="{{ $role->id }}"
                                         @if ($user->roles->pluck('id')->contains($role->id)) checked @endif>
                                         <label for="role-{{ $role->id }}">{{ $role->name }}</label>
                                     </div>
                                     
-                                @endforeach
+                                    @endforeach
+                                </div>
                             </div>
-                        </div>
-
+                        @else
+                            <div class="form-group row">
+                                <label for="roles" class="col-md-4 col-form-label text-md-right">Roles</label>
+                                <div class="col-md-6">
+                                    @foreach ($roles as $role)
+                                    <div>
+                                        <input type="checkbox" name="roles[]" id="role-{{ $role->id }}" value="{{ $role->id }}"
+                                        @if ($user->roles->pluck('id')->contains($role->id)) checked @endif onclick="return false;">
+                                        <label for="role-{{ $role->id }}">{{ $role->name }}</label>
+                                    </div>
+                                    
+                                    @endforeach
+                                </div>
+                            </div>
+                        @endif
+                        
+                        
+                        <img class="mb-4"  src="{{$user->imgPath}}" alt="User image profile" style="width: 18rem; display: block; margin-left: auto; margin-right: auto; ">
+                        
                         <div class="form-group row">
                             <label for="imgPath" class="col-md-4 col-form-label text-md-right">{{ __('Profil Image') }}</label>
                             
