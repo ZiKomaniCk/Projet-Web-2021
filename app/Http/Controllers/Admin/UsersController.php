@@ -65,7 +65,7 @@ class UsersController extends Controller
             //     unlink(public_path($user->imgPath));
             // }
             // Storage::delete('public' . $user->imgPath);
-            FacadesFile::delete('public' . $user->imgPath);
+            // FacadesFile::delete('public' .  $user->imgPath);
             $user->imgPath = '/images/users/' . $file->getClientOriginalName();
             $file->move(public_path('\images\users/'), $file->getClientOriginalName());
         }else{
