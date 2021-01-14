@@ -58,9 +58,8 @@
                                 </a> --}}
                             
                                 <a class="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                    
+                                    {{Auth::user()->firstName}}
                                 </a>
-                                <p>{{Auth::user()->name}}</p>
                                 
 
                                 <div class="dropdown-menu dropdown-right " aria-labelledby="navbarDropdown">
