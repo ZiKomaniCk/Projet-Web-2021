@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Game;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate as FacadesGate;
 
 class GameController extends Controller
 {
@@ -12,6 +13,12 @@ class GameController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index','show']]);
+    }
+
     public function index()
     {
         $games = Game::all();
@@ -25,7 +32,9 @@ class GameController extends Controller
      */
     public function create()
     {
-        //
+        if(FacadesGate::denies('manage-users')){
+            return redirect(route('home'));
+        }
     }
 
     /**
@@ -47,7 +56,7 @@ class GameController extends Controller
      */
     public function show(Game $game)
     {
-        //
+        return view('games.show', ['game' => $game]);
     }
 
     /**
