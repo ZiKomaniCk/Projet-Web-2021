@@ -71,22 +71,56 @@
 </div>
 
 <div class="container mt-3">
-    @foreach ($game->purchases as $pur)
-        <div class="card mb-3 w-50" >
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="..." alt="...">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $pur->user_id }}</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    <div class="row">
+        
+        @foreach ($game->reviews as $review)
+        <div class="col-md-6">
+            
+            <div class="card mb-3 " >
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="{{ $review->user->imgPath }}" alt="image de profil" style="max-width: 160px;">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col mt-2">
+                                    <h3 class="card-title text-primary">{{ $review->user->nickname }}</h3>
+                                </div>
+                                <div class="col">
+                                    <div class="rating">
+                                        <div class="rating-upper" style="width: {{ ($review->rate)*20 }}%">
+                                            <span>★</span>
+                                            <span>★</span>
+                                            <span>★</span>
+                                            <span>★</span>
+                                            <span>★</span>
+                                        </div>
+                                        <div class="rating-lower">
+                                            <span>★</span>
+                                            <span>★</span>
+                                            <span>★</span>
+                                            <span>★</span>
+                                            <span>★</span>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <hr>
+                            <h3 class="card-text">{{ $review->title }}</h3>
+                            <p class="card-text">{{ $review->comment }}</p>
+                            <p class="card-text"><small class="text-muted">Date du commentaire : {{ $review->updated_at }}</small></p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    @endforeach
+        
+        @endforeach
+    </div>
+    
 </div>
 
 @endsection
+

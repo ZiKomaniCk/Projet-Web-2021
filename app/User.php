@@ -41,8 +41,12 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Role');
     }
     
-    public function purchases(){
-        return $this->hasMany(Purchase::class);
+    public function games() {
+        return $this->belongsToMany(Game::class, 'games_users');
+    }
+
+    public function reviews() {
+        return $this->hasMany(Review::class);
     }
 
     public function hasAnyRoles($roles){
