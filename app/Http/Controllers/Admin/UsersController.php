@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\User;
 use App\Role;
+use Gate;
 use Facade\FlareClient\Stacktrace\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File as FacadesFile;
+use Illuminate\Support\Facades\Gate as FacadesGate;
 use Illuminate\Support\Facades\Storage;
 
 class UsersController extends Controller
@@ -35,6 +37,9 @@ class UsersController extends Controller
      */
     public function edit(User $user)
     {
+        if(FacadesGate::denies('manage-users')){
+            return redirect(route('admin.users.index'));
+        }
         $roles = Role::all();
         return view('admin.users.edit', [
             'roles' => $roles, 
