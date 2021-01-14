@@ -37,9 +37,9 @@ class UsersController extends Controller
      */
     public function edit(User $user)
     {
-        if(FacadesGate::denies('manage-users')){
-            return redirect(route('admin.users.index'));
-        }
+        // if(FacadesGate::denies('manage-users')){
+        //     return redirect(route('admin.users.index'));
+        // }
         $roles = Role::all();
         return view('admin.users.edit', [
             'roles' => $roles, 

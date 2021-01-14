@@ -58,8 +58,9 @@
                                 </a> --}}
                             
                                 <a class="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                    {{Auth::user()->name}}
+                                    
                                 </a>
+                                <p>{{Auth::user()->name}}</p>
                                 
 
                                 <div class="dropdown-menu dropdown-right " aria-labelledby="navbarDropdown">
@@ -68,8 +69,8 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+                                    
                                     @can('manage-users')
-                                        
                                     <a class="dropdown-item" href="{{ route('admin.users.index') }}">
                                         User Managment
                                     </a>
