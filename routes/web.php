@@ -1,5 +1,6 @@
 <?php
 
+use App\Game;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -13,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// Route::get('/', function () {
+//     $games = Game::all(); 
+//     return view('games.index', ['games' => $games]);
+// });
 
 Route::get('/', function () {
     return redirect(route('games.index'));

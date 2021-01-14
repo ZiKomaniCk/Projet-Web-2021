@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container">
+{{-- <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card">
@@ -21,7 +21,7 @@
       </div>      
     </div>
   </div>
-</div>
+</div> --}}
 
 <div class="container">
   <div class="card mb-3">
@@ -32,26 +32,53 @@
       <div class="col-md-8">
         <div class="card-body">
           <div class="card-body">
-          <h5 class="card-title fs-1 fw-bold">{{$user->nickname}}</h5> 
-          <hr>
-          <h5 class="text-end fs-3" style="margin-bottom">crédit: {{$user->credit}}</h5>
+            <h5 class="card-title fs-1 fw-bold">{{$user->nickname}}</h5> 
+            <hr>
+            <h5 class="text-end fs-3" style="margin-bottom">crédit: {{$user->credit}}</h5>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-</div>
 
-<div class="container">
-<div class="card" style="width: 25rem;">
-  <div class="card-body text-center">
-    <h5 class="card-title fs-4">Information personnelles</h5>
+<div class="container" style="background-color: white">
+  <div class="row">
+    <div class="col-sm-4 ">
+      
+      <div class="card" >
+        <div class="card-body ">
+          <h5 class="card-title fs-4 text-center">Information personnelles</h5>
+          <p class="card-text fs-6">Nom : {{$user->lastName}}</p>
+          <p class="card-text fs-6">Prénom : {{$user->firstName}}</p>
+          <p class="card-text fs-6">Email : {{$user->email}}</p>
+          <p class="card-text fs-6">Nom : {{$user->lastName}}</p>
+        </div>
+      </div>
+    </div>
     
-    <p class="card-text fs-6">Nom : {{$user->lastName}}</p>
-    <p class="card-text fs-6">Prénom : {{$user->firstName}}</p>
-    <p class="card-text fs-6">Email : {{$user->email}}</p>
-    <p class="card-text fs-6">Nom : {{$user->lastName}}</p>
+    <div class="col-sm-8 ">
+      <div class="card" style="">
+        <div class="card-body ">
+          <h5 class="card-title fs-4 text-center">Information personnelles</h5>
+          <p class="card-text fs-6">Nom : {{$user->lastName}}</p>
+          <p class="card-text fs-6">Prénom : {{$user->firstName}}</p>
+          <p class="card-text fs-6">Email : {{$user->email}}</p>
+          <p class="card-text fs-6">Nom : {{$user->lastName}}</p>
+        </div>
+      </div>
+      <div class="card" style="">
+        <div class="card-body ">
+          <h5 class="card-title fs-4 text-center">Information personnelles</h5>
+          <p class="card-text fs-6">Nom : {{$user->lastName}}</p>
+          <p class="card-text fs-6">Prénom : {{$user->firstName}}</p>
+          <p class="card-text fs-6">Email : {{$user->email}}</p>
+          <p class="card-text fs-6">Nom : {{$user->lastName}}</p>
+        </div>
+      </div>
+    </div>
+    
+    
   </div>
-</div>
 </div>
 @endsection

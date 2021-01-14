@@ -26,7 +26,8 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{-- {{ config('app.name', '') }}  --}}
+                    Gamingue
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -58,7 +59,7 @@
                                 </a> --}}
                             
                                 <a class="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                    {{Auth::user()->firstName}}
+                                    {{Auth::user()->nickname}}
                                 </a>
                                 
 
@@ -77,7 +78,7 @@
 
                                     @if (Auth::user()->hasRole('user'))
                                         <a class="dropdown-item" href="{{ route('admin.users.edit', ['user' => Auth::user()]) }}">
-                                            edit profile
+                                            Modifier le profile
                                         </a>
                                     @endif
                                     
