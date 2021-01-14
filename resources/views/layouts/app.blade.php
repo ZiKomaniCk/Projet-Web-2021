@@ -78,7 +78,7 @@
 
                                     @if (Auth::user()->hasRole('user'))
                                         <a class="dropdown-item" href="{{ route('admin.users.edit', ['user' => Auth::user()]) }}">
-                                            Modifier le profile
+                                            Modifier le profil
                                         </a>
                                     @endif
                                     
@@ -88,6 +88,13 @@
                                 </div>
                             </li>
                         @endguest
+                        <li class="nav-item ">
+                            @guest
+                                <p class="nav-link">Cart </p>
+                            @else
+                                <p class="nav-link">Carting</p>
+                            @endguest
+                        </li>
                     </ul>
                 </div>
             </div>

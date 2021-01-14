@@ -57,6 +57,20 @@
 </div>
 
 <div class="form-group row">
+    <label for="birthDate" class="col-md-4 col-form-label text-md-right">{{ __('Birth Date') }}</label>
+    
+    <div class="col-md-6">
+        <input id="birthDate" type="date" class="form-control @error('birthDate') is-invalid @enderror" name="birthDate" value="{{ $user->birthDate ?? '' }}" required autocomplete="birthDate">
+        
+        @error('birthDate')
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+        </span>
+        @enderror
+    </div>
+</div>
+
+<div class="form-group row">
     <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
     
     <div class="col-md-6">

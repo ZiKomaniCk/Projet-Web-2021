@@ -65,6 +65,7 @@ class UsersController extends Controller
         $user->nickname = $request->nickname;
         $user->credit = $request->credit;
         $user->email = $request->email;
+        $user->birthDate = $request->birthDate;
         
         if ($request->hasFile('imgPath')){
             $file = $request->file('imgPath');
