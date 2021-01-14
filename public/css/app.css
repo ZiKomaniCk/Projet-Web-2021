@@ -10903,3 +10903,6 @@ a.text-dark:focus {
   }
 }
 
+@media (min-width: 300px) {
+  .profilePicture { max-width: 180px; }
+}
