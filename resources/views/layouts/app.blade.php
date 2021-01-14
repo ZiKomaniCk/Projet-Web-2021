@@ -80,11 +80,11 @@
                                         </a>
                                     @endcan
 
-                                    @if (Auth::user()->hasRole('user'))
+                                    {{-- @if (Auth::user()->hasRole('user'))
                                         <a class="dropdown-item" href="{{ route('admin.users.edit', ['user' => Auth::user()]) }}">
                                             Modifier le profil
                                         </a>
-                                    @endif
+                                    @endif --}}
                                     
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf

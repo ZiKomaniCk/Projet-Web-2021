@@ -52,7 +52,10 @@
           <p class="card-text fs-6">Nom : {{$user->lastName}}</p>
           <p class="card-text fs-6">Prénom : {{$user->firstName}}</p>
           <p class="card-text fs-6">Email : {{$user->email}}</p>
-          <p class="card-text fs-6">Nom : {{$user->lastName}}</p>
+          <p class="card-text fs-6">birthDate : {{$user->birthDate}}</p>
+          <a class="btn btn-primary" href="{{ route('admin.users.edit', ['user' => Auth::user()]) }}">
+            Modifier le profil
+          </a>
         </div>
       </div>
     </div>
