@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Game;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate as FacadesGate;
 
 class GameController extends Controller
@@ -21,7 +22,7 @@ class GameController extends Controller
 
     public function index()
     {
-        $games = Game::all();
+        $games = Game::paginate(5);
         return view('games.index', ['games' => $games]);
     }
 

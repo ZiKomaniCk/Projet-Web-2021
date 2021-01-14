@@ -70,6 +70,10 @@
                                         {{ __('Logout') }}
                                     </a>
                                     
+                                    <a class="dropdown-item" href="{{ route('home') }}">
+                                        Profil
+                                    </a>
+
                                     @can('manage-users')
                                         <a class="dropdown-item" href="{{ route('admin.users.index') }}">
                                             User Managment
