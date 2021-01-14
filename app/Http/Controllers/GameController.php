@@ -22,7 +22,7 @@ class GameController extends Controller
 
     public function index()
     {
-        $games = Game::paginate(5);
+        $games = Game::paginate(6);
         return view('games.index', ['games' => $games]);
     }
 
@@ -34,7 +34,7 @@ class GameController extends Controller
     public function create()
     {
         if(FacadesGate::denies('manage-users')){
-            return redirect(route('home'));
+            return redirect(route('games.index'));
         }
     }
 
