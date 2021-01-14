@@ -18,10 +18,10 @@
 
                 </div>
 
-                <div class="card mb-3" style="max-width: 540px;">
+                <div class="card mb-3" style="max-width: 800px;">
                     <div class="row g-0">
                       <div class="col-md-4">
-                        <img src="{{$user->imgPath}}" alt="Votre photo de profil">
+                        <img src="{{$user->imgPath}}" style="max-width: 200px;" alt="Votre photo de profil">
                       </div>
                       <div class="col-md-8">
                         <div class="card-body">
