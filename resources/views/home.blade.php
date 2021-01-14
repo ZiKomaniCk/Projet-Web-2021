@@ -63,7 +63,7 @@
     <div class="col-sm-8 ">
       <div class="card" style="">
         <div class="card-body ">
-          <h5 class="card-title fs-4 text-center">Information personnelles</h5>
+          <h5 class="card-title fs-4 text-center">Jeux achetée</h5>
           <p class="card-text fs-6">Nom : {{$user->lastName}}</p>
           <p class="card-text fs-6">Prénom : {{$user->firstName}}</p>
           <p class="card-text fs-6">Email : {{$user->email}}</p>
