@@ -26,15 +26,17 @@ class UsersTableSeeder extends Seeder
             'firstName' => 'Admin ',
             'lastName' => ' User',
             'nickname' => ' AdminNick',
+            'imgPath' => ' /images/users/profileDefault.png',
             'credit' => 1000,
             'email' => 'admin@admin.com',
             'password' => Hash::make('password'),
-        ]);
-
-        $user = User::create([
+            ]);
+            
+            $user = User::create([
             'firstName' => 'Generic ',
             'lastName' => ' User',
             'nickname' => ' UserNick',
+            'imgPath' => ' /images/users/profileDefault.png',
             'credit' => 100,
             'email' => 'user@user.com',
             'password' => Hash::make('password'),
