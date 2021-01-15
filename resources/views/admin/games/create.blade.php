@@ -2,6 +2,23 @@
 
 @section('content')
 <div class="container">
-    @include('admin.games.partials.form')
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Création') }}</div>
+
+                <div class="card-body">
+                    <form method="POST" action="{{ route('register') }}">
+                        @csrf
+                        @include('admin.games.partials.form')
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 @endsection
