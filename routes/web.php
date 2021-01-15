@@ -32,4 +32,9 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
     Route::resource('/users', 'UsersController', ['except' => ['show', 'create', 'store']]);
 });
 
-Route::resource("games", "GameController");
+Route::resource("games", "GameController", ['except' => ['create', 'store', 'update', 'edit', 'destroy']]);
+
+
+Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function(){
+    Route::resource('/games', 'GameController');
+});

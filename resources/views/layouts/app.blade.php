@@ -78,6 +78,14 @@
                                         <a class="dropdown-item" href="{{ route('admin.users.index') }}">
                                             User Managment
                                         </a>
+                                        
+                                        <a class="dropdown-item" href="{{ route('admin.games.index') }}">
+                                            Game Managment
+                                        </a>
+
+                                        <a class="dropdown-item" href="">
+                                            Tableau de bord
+                                        </a>
                                     @endcan
 
                                     {{-- @if (Auth::user()->hasRole('user'))

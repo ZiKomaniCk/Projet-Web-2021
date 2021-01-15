@@ -11304,6 +11304,7 @@ a.text-dark:focus {
   color: #121416 !important;
 }
 
+<<<<<<< HEAD
 .text-gray600 {
   color: #6c757d !important;
 }
@@ -11315,6 +11316,10 @@ a.text-gray600:focus {
 
 .text-gray1e {
   color: #1e1e1e !important;
+=======
+.text-body {
+  color: #212529 !important;
+>>>>>>> d511b89d301d4e01656c342636dbe733d0beb739
 }
 
 a.text-gray1e:hover,

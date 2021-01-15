@@ -18,7 +18,6 @@ class CreateReviewsTable extends Migration
             $table->integer('game_id');
             $table->integer('user_id');
             $table->integer('rate');
-            $table->string('title');
             $table->longText('comment');
             $table->timestamps();
         });
