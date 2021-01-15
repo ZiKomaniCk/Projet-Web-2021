@@ -23,9 +23,9 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-white bg-gray2e shadow-sm border-bottom border-primary">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand fs-2 fw-bold" href="{{ url('/') }}">
                     {{-- {{ config('app.name', '') }}  --}}
                     Gamingue
                 </a>
@@ -43,12 +43,12 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <li class="nav-item mt-3">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Connexion') }}</a>
                             </li>
                             @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <li class="nav-item mt-3">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __("S'enregistrer") }}</a>
                                 </li>
                             @endif
                         @else
@@ -58,12 +58,12 @@
                                     {{ Auth::user()->name }}
                                 </a> --}}
                             
-                                <a class="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="btn btn-gray1e dropdown-toggle mt-3" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                                     {{Auth::user()->nickname}}
                                 </a>
                                 
 
-                                <div class="dropdown-menu dropdown-right " aria-labelledby="navbarDropdown">
+                                <div class="dropdown-menu dropdown-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -94,9 +94,9 @@
                         @endguest
                         <li class="nav-item ">
                             @guest
-                                <p class="nav-link">Cart </p>
+                                <p class="nav-link text-white mt-3">Panier</p>
                             @else
-                                <p class="nav-link">Carting</p>
+                                <p class="nav-link text-white mt-3">Panierre</p>
                             @endguest
                         </li>
                     </ul>

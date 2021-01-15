@@ -4,7 +4,7 @@
 @section('content')
 
 <div class="container" style="background-color: #333333">
-    <p>la barre de recherche</p>
+    <p class="text-white">Barre a faire</p>
 </div>
 
 <div class="container" style="background-color: #333333">
@@ -31,10 +31,8 @@
             <div class="col-sm-4 p-3">
                 <div class="card " style="width: 18rem;">
                     <img src="{{$game->pathImage}}" class="card-img-top" alt="...">
-                    <div class="card-body" style="background-color: #1e1e1e">
+                    <div class="card-body shadow-sm" style="background-color: #1e1e1e">
                         <h5 class="card-title text-primary fs-4 fw-bold">{{$game->name}}</h5>
-                        {{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}
-                        {{-- <p class="card-text">{{$game->description}}</p> --}}
                         <div class="row justify-content-center mb-3">
                             <div class="col-9">
                                 <p class="card-text fs-6 fw-light">{{$game->company}}</p>
