@@ -1,5 +1,5 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css2?family=Kulim+Park&display=swap'); 
+@import url('https://use.typekit.net/bpf1nvp.css'); 
 
 // Variables
 @import 'variables';
@@ -12,7 +12,7 @@
 .rating {
     display: inline-block;
     unicode-bidi: bidi-override;
-    color: white;
+    color: #f1f1f1;
     font-size: 25px;
     height: 25px;
     width: auto;
@@ -22,7 +22,7 @@
   }
   
   .rating-upper {
-    color: yellow;
+    color: #dbd938;
     padding: 0;
     position: absolute;
     z-index: 1;
