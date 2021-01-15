@@ -18,6 +18,7 @@
                 <th scope="col">Image</th>
                 <th scope="col">Prix</th>
                 <th scope="col">Editeur</th>
+                <th scope="col">Visible</th>
                 <th scope="col">Date de sortie</th>
                 <th scope="col">Actions</th>
             </tr>
@@ -29,6 +30,12 @@
                     <td> <img src="{{ $game->pathImage }}" alt="" style="width: 100px"></td>
                     <td>{{ $game->price }}€</td>
                     <td>{{ $game->company }}</td>
+                    <td>@if ($game->visible == 0)
+                            Visible
+                        @else
+                            Caché
+                        @endif 
+                    </td>
                     <td>{{ $game->releaseDate }}</td>
                     <td>
                         <a href="{{ route('games.show', ['game' => $game]) }}" type="button" class="btn btn-info text-white">Show</a>

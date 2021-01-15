@@ -22,7 +22,7 @@ class GameController extends Controller
 
     public function index()
     {
-        $games = Game::paginate(6);
+        $games = Game::where('visible', '=', 1)->paginate(6);
         return view('games.index', ['games' => $games]);
     }
 
