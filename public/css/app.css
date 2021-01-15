@@ -70,7 +70,7 @@ body {
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6;
-  color: #1e1e1e;
+  color: #212529;
   text-align: left;
   background-color: #1e1e1e;
 }
@@ -1771,7 +1771,7 @@ pre code {
 .table {
   width: 100%;
   margin-bottom: 1rem;
-  color: #1e1e1e;
+  color: #212529;
 }
 
 .table th,
@@ -1821,7 +1821,7 @@ pre code {
 }
 
 .table-hover tbody tr:hover {
-  color: #1e1e1e;
+  color: #212529;
   background-color: rgba(0, 0, 0, 0.075);
 }
 
@@ -2225,7 +2225,7 @@ select.form-control:focus::-ms-value {
   margin-bottom: 0;
   font-size: 0.9rem;
   line-height: 1.6;
-  color: #1e1e1e;
+  color: #212529;
   background-color: transparent;
   border: solid transparent;
   border-width: 1px 0;
@@ -2619,7 +2619,7 @@ textarea.form-control.is-invalid {
 .btn {
   display: inline-block;
   font-weight: 400;
-  color: #1e1e1e;
+  color: #212529;
   text-align: center;
   vertical-align: middle;
   -webkit-user-select: none;
@@ -2642,7 +2642,7 @@ textarea.form-control.is-invalid {
 }
 
 .btn:hover {
-  color: #1e1e1e;
+  color: #212529;
   text-decoration: none;
 }
 
@@ -3403,7 +3403,7 @@ input[type=button].btn-block {
   padding: 0.5rem 0;
   margin: 0.125rem 0 0;
   font-size: 0.9rem;
-  color: #1e1e1e;
+  color: #212529;
   text-align: left;
   list-style: none;
   background-color: #f6f6f6;
@@ -5739,7 +5739,7 @@ a.badge-dark.focus {
 }
 
 .list-group-item-action:active {
-  color: #1e1e1e;
+  color: #212529;
   background-color: #e9ecef;
 }
 
@@ -6672,7 +6672,7 @@ a.close.disabled {
 
 .popover-body {
   padding: 0.5rem 0.75rem;
-  color: #1e1e1e;
+  color: #212529;
 }
 
 .carousel {
@@ -10765,7 +10765,7 @@ a.text-dark:focus {
 }
 
 .text-body {
-  color: #1e1e1e !important;
+  color: #212529 !important;
 }
 
 .text-muted {

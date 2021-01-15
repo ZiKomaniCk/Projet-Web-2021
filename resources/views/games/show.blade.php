@@ -16,25 +16,25 @@
                             {{ $game->platform }}
                         </span>
                     </p>
-                    <p class="card-text">Developpé par 
+                    <p class="card-text ">Developpé par 
                         <span class="text-primary">
                             {{ $game->company }}
                         </span>
                     </p>
-                    <div class="row">
-                        <div class="col-md-6">
+                    <div class="row ">
+                        <div class="col-md-6 mt-5">
                             <p class="card-text"><small class="text-muted">Date de sortie : {{ $game->releaseDate }}</small></p>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 mt-5">
                             <p class="card-text">
-                                <div class="bulleScore text-white" > 
+                                {{-- <div class="bulleScore text-white" >  --}}
                                     <span class="text-primary">
                                         Score
                                     </span>
                                     <span style='background-color: #f6993f'>
                                         {{ $game->score }}/20
                                     </span>
-                                </div>
+                                {{-- </div> --}}
                             </p>
                         </div>
                     </div>
@@ -46,7 +46,27 @@
                         <div class="col-md-4">
                             <img class="ml-5" src="/images/pegi/{{$game->pegi}}.jpg" alt="" style="width: 50px">
                         </div>
-                        <div class="col-md-5" >
+                        <div class="col-md-6" >
+                            @can('manage-users')
+                                <span class="ml-2" style="float: right">
+                                        <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="optionsDrop" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Admin Options
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="optionsDrop">
+                                            <li><a class="dropdown-item" href="{{ route('admin.games.edit', ['game' => $game]) }}">Modifier</a></li>
+                                            <li>
+                                                <form action="{{ route('admin.games.destroy', ['game' => $game]) }}" method="POST" >
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class=" dropdown-item btn btn-danger">Delete</button>
+                                                </form>
+                                                {{-- <a class="dropdown-item" href="{{ route('games.show', ['game' => $game]) }}">Supprimer</a> --}}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </span>
+                            @endcan
                             <span class="" style="float: right">
                                 {{ $game->price }}
                                 <button class="btn btn-primary text-white">Acheter</button>
