@@ -3,11 +3,11 @@
 
 @section('content')
 
-<div class="container" style="background-color: white">
+<div class="container" style="background-color: #333333">
     <p>la barre de recherche</p>
 </div>
 
-<div class="container" style="background-color: whitesmoke">
+<div class="container" style="background-color: #333333">
 
     {{-- <nav aria-label="Page navigation example" class="pt-3" >
         <ul class="pagination justify-content-center">
@@ -22,9 +22,7 @@
           </li>
         </ul>
     </nav> --}}
-    <div class="mx-auto pt-3" style="width: 200px;">
-        {{ $games->links() }}
-    </div>
+
 
     
 
@@ -33,23 +31,27 @@
             <div class="col-sm-4 p-3">
                 <div class="card " style="width: 18rem;">
                     <img src="{{$game->pathImage}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">{{$game->name}}</h5>
+                    <div class="card-body" style="background-color: #1e1e1e">
+                        <h5 class="card-title text-primary fs-4 fw-bold">{{$game->name}}</h5>
                         {{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}
                         {{-- <p class="card-text">{{$game->description}}</p> --}}
                         <div class="row justify-content-center mb-3">
                             <div class="col-9">
-                                <p class="card-text">{{$game->company}}</p>
+                                <p class="card-text fs-6 fw-light">{{$game->company}}</p>
                             </div>
                             <div class="col-3">
-                                <p class="card-text">{{$game->price}} €</p>
+                                <p class="card-text fs-5 fw-bold">{{$game->price}}€</p>
                             </div>
                         </div>
-                        <a href="{{ route('games.show', ['game' => $game]) }}" class="btn btn-primary">Voir plus</a>
+                        <a href="{{ route('games.show', ['game' => $game]) }}" class="btn btn-primary text-white">Voir plus</a>
                     </div>
                 </div>
             </div>
         @endforeach
+        <div class="mx-auto pt-3 mb-3" style="width: 200px;">
+            {{ $games->links() }}
+        </div>
     </div>
 </div>
+
 @endsection

@@ -1,8 +1,8 @@
 // Body
-$body-bg: #f8fafc;
+$body-bg: #1e1e1e;
 
 // Typography
-$font-family-sans-serif: 'Kulim Park', sans-serif;
+$font-family-sans-serif: 'acumin-pro', sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
 
@@ -12,12 +12,21 @@ $indigo: #6574cd;
 $purple: #9561e2;
 $pink: #f66d9b;
 $red: #e3342f;
-$orange: #f6993f;
+$orange: #ff8433;
 $yellow: #ffed4a;
 $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
+$white: #f6f6f6;
+$gray1e: #1e1e1e;
+$gray2e: #333333;
 
-
-
+// primary
 $primary: $orange;
+
+// card
+$card-bg: $gray2e;
+$card-cap-color: $gray2e;
+$card-height: $gray2e;
+$card-color: $white;
+
