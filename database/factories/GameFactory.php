@@ -12,7 +12,7 @@ $factory->define(Game::class, function (Faker $faker) {
         'score' => $faker->numberBetween($min = 0, $max = 20),
         'visible' => $faker->randomElement(['0' ,'1']),
         'activationCode' => $faker->swiftBicNumber,
-        'pathImage' => $faker->imageUrl($width = 640, $height = 480),
+        'pathImage' => $faker->imageUrl($width = 420 , $height = 580),
         // 'description' => $faker->text($maxNbChars = 3250),
         'description' => $faker->paragraphs($nbSentences = 30, $variableNbSentences = true),
         'releaseDate' => $faker->date($format = 'Y-m-d'),

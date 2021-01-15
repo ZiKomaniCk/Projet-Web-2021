@@ -21,12 +21,35 @@ $white: #f6f6f6;
 $gray1e: #1e1e1e;
 $gray2e: #333333;
 
+// gris
+$gray-100: #f8f9fa ;
+$gray-200: #e9ecef ;
+$gray-300: #dee2e6 ;
+$gray-400: #ced4da ;
+$gray-500: #adb5bd ;
+$gray-600: #6c757d ;
+$gray-700: #495057 ;
+$gray-800: #343a40 ;
+$gray-900: #212529 ;
+
 // primary
 $primary: $orange;
+// $component-active-color:      $gray-700 ;
 
 // card
 $card-bg: $gray2e;
 $card-cap-color: $gray2e;
 $card-height: $gray2e;
 $card-color: $white;
+
+// Pagination
+$pagination-bg:                     $gray2e;
+$pagination-border-color:           $gray1e ;
+$pagination-hover-bg:               $gray-800 ;
+$pagination-hover-border-color:     $gray-900 ;
+
+$pagination-disabled-color:         $gray-600 ;
+$pagination-disabled-bg:            $gray-900 ;
+$pagination-disabled-border-color:  $gray1e ;
+
 
