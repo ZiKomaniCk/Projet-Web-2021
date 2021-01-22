@@ -40,22 +40,6 @@
     </div>
     
     <div class="col-sm-8 ">
-<<<<<<< HEAD
-      <div class="card" style="">
-        <div class="card-body ">
-          <h5 class="card-title fs-4 text-center">Information personnelles</h5>
-          <p class="card-text fs-6">Nom : {{$user->lastName}}</p>
-          <p class="card-text fs-6">Prénom : {{$user->firstName}}</p>
-          <p class="card-text fs-6">Email : {{$user->email}}</p>
-          <p class="card-text fs-6">Nom : {{$user->lastName}}</p>
-        </div>
-      <div class="card" style="">
-        <div class="card-body ">
-          <h5 class="card-title fs-4 text-center">Jeux acheté</h5>
-          <p class="card-text fs-6">. . .</p>
-
-        </div>
-=======
       <div class="row">
         @foreach ($user->games as $game)
           <div class="col-sm-4">
@@ -77,7 +61,6 @@
             </div>
           </div>
         @endforeach
->>>>>>> d9c9ef60d315d60faaa9e11a71b5033827e8efb6
       </div>
       </div>
     </div>
