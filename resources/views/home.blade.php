@@ -56,7 +56,7 @@
                       </div>
                   </div>
                   <a href="{{ route('games.show', ['game' => $game]) }}" class="btn btn-primary text-white">Voir plus</a>
-                  <a href="{{ route('games.show', ['game' => $game]) }}" class="btn btn-primary text-white">Mettre review</a>
+                  <a href="{{ route('reviews.create') }}" class="btn btn-primary text-white">Creer review</a>
               </div>
             </div>
           </div>
