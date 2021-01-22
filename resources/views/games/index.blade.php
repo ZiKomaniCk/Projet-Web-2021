@@ -7,7 +7,7 @@
     <p class="text-white">Barre a faire</p>
 </div>
 
-<div class="container" style="background-color: #333333; border-color: #ff8433; border-style:solid;">
+<div class="container" style="background-color: #333333;">
 
     {{-- <nav aria-label="Page navigation example" class="pt-3" >
         <ul class="pagination justify-content-center">
@@ -32,10 +32,10 @@
                 <div class="card rounded-2 shadow-sm" style="width: 18rem;">
                     <img src="{{$game->pathImage}}" class="card-img-top" alt="...">
                     <div class="card-body" style="background-color: #1e1e1e">
-                        <h5 class="card-title text-primary fs-4 fw-bold">{{$game->name}}</h5>
+                        <h5 class="card-title text-primary fs-5 fw-bold">{{$game->name}}</h5>
                         <div class="row justify-content-center mb-3">
                             <div class="col-9">
-                                <p class="card-text fs-6 fw-light">{{$game->company}}</p>
+                                <p class="card-text fs-5 fw-light fw-bold">{{$game->company}}</p>
                             </div>
                             <div class="col-3">
                                 <p class="card-text fs-5 fw-bold">{{$game->price}}€</p>

@@ -25,7 +25,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-white bg-gray2e shadow-sm border-bottom border-primary">
             <div class="container">
-                <a class="navbar-brand fs-2 fw-bold" href="{{ url('/') }}">
+                <a class="navbar-brand fs-2 fw-bold" style="text-shadow: -2px 2px  #1e1e1e;" href="{{ url('/') }}">
                     {{-- {{ config('app.name', '') }}  --}}
                     Gamingue
                 </a>
