@@ -36,5 +36,5 @@ Route::resource("games", "GameController", ['except' => ['create', 'store', 'upd
 
 
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function(){
-    Route::resource('/games', 'GameController');
+    Route::resource('/games', 'GameController', ['except' => ['show']]);
 });

@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 
     <div class="form-group row">
         <label for="lastName" class="col-md-4 col-form-label text-md-right">{{ __('Nom') }}</label>
@@ -15,7 +13,6 @@
         </div>
     </div>
 
->>>>>>> e799d245e74ecad6e27c55ef66e4281aed0146fc
 <div class="form-group row">
     <label for="firstName" class="col-md-4 col-form-label text-md-right">{{ __('Prénom') }}</label>
     
