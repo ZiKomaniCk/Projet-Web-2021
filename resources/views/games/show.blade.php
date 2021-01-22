@@ -102,6 +102,20 @@
                 <div class="row g-0">
                     <div class="col-md-4">
                         <img src="{{ $review->user->imgPath }}" alt="image de profil" style="max-width: 160px;">
+                    @if (Auth::user()->id == $review->user_id || Auth::user()->hasRole('admin'))
+                        <div class="row mt-4">
+                            <div class="col-5 mr-1 ml-1">
+                                <a href="{{ route('reviews.edit', ['review' => $review]) }}" class="btn btn-primary">Modifier</a>
+                            </div>
+                            <div class="col-6">
+                                <form action="{{ route('reviews.destroy', ['review' => $review]) }}" method="POST" >
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Supprimer</button>
+                                </form>
+                            </div>
+                        </div>
+                    @endif
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">

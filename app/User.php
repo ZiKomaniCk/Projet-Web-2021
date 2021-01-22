@@ -49,6 +49,17 @@ class User extends Authenticatable
         return $this->hasMany(Review::class);
     }
 
+    public function hasReview($game_id){
+        if($this->reviews()->where('game_id', $game_id)->first()){
+            return true;
+        }
+        return false;
+    }
+
+    public function getReview($game_id){
+        return $this->reviews()->where('game_id', $game_id)->first();
+    }
+
     public function hasAnyRoles($roles){
         if($this->roles()->whereIn('name',$roles)->first()){
             return true;
