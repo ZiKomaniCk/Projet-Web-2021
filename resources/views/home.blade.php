@@ -56,8 +56,13 @@
                       </div>
                   </div>
                   <a href="{{ route('games.show', ['game' => $game]) }}" class="btn btn-primary text-white">Voir plus</a>
-                  <a href="{{ route('reviews.create') }}" class="btn btn-primary text-white">Creer review</a>
-              </div>
+                  @if ($user->hasReview($game->id))
+                    <a href="{{ route('reviews.show', ['review' => $user->getReview($game->id)]) }}" class="btn btn-primary text-white">Voir Avis</a>
+                  @else
+                    <a href="{{ route('reviews.create', ['game' => $game]) }}" class="btn btn-primary text-white">Ajouter Avis</a>
+                  @endif
+              
+                </div>
             </div>
           </div>
         @endforeach
