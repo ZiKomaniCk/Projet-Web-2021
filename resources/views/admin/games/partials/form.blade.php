@@ -126,11 +126,11 @@
     <div class="col-md-6">
         <div class="mt-2">
             <select id="pegi" class="custom-select" name="pegi">
-                <option selected value="3">Pegi 3</option>
-                <option value="7">Pegi 7</option>
-                <option value="12">Pegi 12</option>
-                <option value="16">Pegi 16</option>
-                <option value="18">Pegi 18</option>
+                @foreach ($pegi as $int)
+                <option @if ($game->pegi == $int) selected @endif
+                    value="{{$int}}">Pegi {{$int}}
+                </option>
+                @endforeach
             </select>
         </div>
     </div>

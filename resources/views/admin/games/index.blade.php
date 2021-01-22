@@ -16,6 +16,7 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Image</th>
+                <th scope="col">Nom</th>
                 <th scope="col">Prix</th>
                 <th scope="col">Editeur</th>
                 <th scope="col">Visible</th>
@@ -28,9 +29,10 @@
                 <tr>
                     <th scope="row ">{{ $game->id }}</th>
                     <td> <img src="{{ $game->pathImage }}" alt="" style="width: 100px"></td>
+                    <td>{{ $game->name }}</td>
                     <td>{{ $game->price }}€</td>
                     <td>{{ $game->company }}</td>
-                    <td>@if ($game->visible == 0)
+                    <td>@if ($game->visible == 1)
                             Visible
                         @else
                             Caché

@@ -80,35 +80,32 @@ class GameController extends Controller
      */
     public function update(Request $request, Game $game)
     {
-        // dd($game);
-        
-
-        // $updateGame = new Game();
-        // $updateGame->name = $request->name;
-        // $updateGame->price = $request->price;
-        // $updateGame->score = $request->score;
-        // $updateGame->quantity = $request->quantity;
-        // $updateGame->description = $request->description;
-        // $updateGame->visible = $request->visible;
+        $updateGame = Game::find($game->id);
+        $updateGame->name = $request->name;
+        $updateGame->price = $request->price;
+        $updateGame->score = $request->score;
+        $updateGame->quantity = $request->quantity;
+        $updateGame->description = $request->description;
+        $updateGame->visible = $request->visible;
         // $updateGame->activationCode = $faker->swiftBicNumber;
-        // $updateGame->releaseDate = $request->releaseDate;
-        // $updateGame->company = $request->company;
-        // $updateGame->pegi = $request->pegi;
-        // $updateGame->platform = $request->platform;
+        $updateGame->releaseDate = $request->releaseDate;
+        $updateGame->company = $request->company;
+        $updateGame->pegi = $request->pegi;
+        $updateGame->platform = $request->platform;
 
         if ($request->hasFile('pathImage')){
             print_r('file');
+            $file = $request->file('pathImage');
+            $updateGame->pathImage = '/images/games/' . $file->getClientOriginalName();
+            $file->move(public_path('\images\games/'), $file->getClientOriginalName());
         }else{
             print_r('marche po');
         }
 
-        // $file = $request->file('pathImage');
-        // $updateGame->pathImage = '/images/games/' . $file->getClientOriginalName();
-        // $file->move(public_path('\images\games/'), $file->getClientOriginalName());
 
-        // $updateGame->save();
+        $updateGame->save();
 
-        // return redirect(route('games.show', ['game' => $newGame]));
+        return redirect(route('games.show', ['game' => $updateGame]));
     }
 
     /**
@@ -120,5 +117,11 @@ class GameController extends Controller
     public function destroy(Game $game)
     {
         //delete reviews and users
+        $game->reviews()->each(function($review){
+            $review->delete();
+        });
+        $game->users()->detach();
+        $game->delete();
+        return redirect(route('admin.games.index'));
     }
 }
