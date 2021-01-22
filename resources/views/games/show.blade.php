@@ -6,45 +6,45 @@
     <div class="card mb-3" >
         <div class="row g-0">
             <div class="col-md-4">
-                <img src="{{ $game->pathImage }}" alt="..." style="width: 280px">
+                <img src="{{ $game->pathImage }}" alt="..." style="width: 310px">
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h1 class="card-title">{{ $game->name }}</h1>
-                    <p class="card-text">Disponible sur 
+                    <h1 class="card-title fw-bold text-primary" style="text-shadow: -2px 2px  #1e1e1e;"  >{{ $game->name }}</h1>
+                    <p class="card-text fw-bold fs-4">Disponible sur 
                         <span class="text-primary">
                             {{ $game->platform }}
                         </span>
                     </p>
-                    <p class="card-text ">Developpé par 
+                    <p class="card-text fs-5 fw-bold">Developpé par 
                         <span class="text-primary">
                             {{ $game->company }}
                         </span>
                     </p>
-                    <div class="row ">
+                    <div class="row">
                         <div class="col-md-6 mt-5">
-                            <p class="card-text"><small class="text-muted">Date de sortie : {{ $game->releaseDate }}</small></p>
+                            <p class="card-text"><small class="text-muted fs-6 fst-italic">Date de sortie : {{ $game->releaseDate }}</small></p>
                         </div>
                         <div class="col-md-6 mt-5">
                             <p class="card-text">
-                                {{-- <div class="bulleScore text-white" >  --}}
-                                    <span class="text-primary">
+
+                                    <span class="text-primary fw-bold fs-2">
                                         Score
                                     </span>
-                                    <span style='background-color: #f6993f'>
+                                    <span class="fs-2 fw-bold rounded-circle pb-3 pt-4 pl-1 pr-1"style='background-color: #ff8433'>
                                         {{ $game->score }}/20
                                     </span>
-                                {{-- </div> --}}
+
                             </p>
                         </div>
                     </div>
                     
-                    {{-- <p class="card-text"><small class="text-muted">Date de sortie : {{ $game->releaseDate }}</small></p> --}}
+         
                 </div>
-                <div class="card-footer" >
+                <div class="mt-3">
                     <div class="row">
                         <div class="col-md-4">
-                            <img class="ml-5" src="/images/pegi/{{$game->pegi}}.jpg" alt="" style="width: 50px">
+                            <img class="ml-5" src="/images/pegi/{{$game->pegi}}.jpg" alt="" style="width: 80px">
                         </div>
                         <div class="col-md-6" >
                             @can('manage-users')
@@ -67,9 +67,10 @@
                                     </div>
                                 </span>
                             @endcan
-                            <span class="" style="float: right">
-                                {{ $game->price }}
-                                <button class="btn btn-primary text-white">Acheter</button>
+                        
+                            <span class="text-white mt-4 fs-1 fw-bold bg-gray1e pt-2 pb-2 pl-4 pr-4 rounded-pill" style="float: right">
+                                {{ $game->price }}€
+                                <button class="btn btn-primary text-white fs-3 fw-bold ">Acheter</button>
                             </span>
                         </div>
                     </div>
@@ -78,11 +79,11 @@
         </div>
     </div>
     
-    <div class="container pl-5 pr-5">
+    <div class="container pl-6 pr-6">
         <div class="card ">
-            <h2 class="text-primary mb-4 ml-4 mt-3">Description :</h2>
-            <div class="container ">
-                <div class="pl-5 pr-5 overflow-auto mb-5" style="max-width: 100%; max-height: 300px;">
+            <h2 class="text-primary mb-3 ml-3 mt-3 fw-bold">Description :</h2>
+            <div class="container">
+                <div class="pl-5 pr-5 overflow-auto mb-5 text-white bg-gray1e rounded" style="max-width: 100%; max-height: 280px;">
                     <p class="">{{ $game->description }}</p>
                 </div>
             </div>
@@ -105,7 +106,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col mt-2">
-                                    <h3 class="card-title text-primary">{{ $review->user->nickname }}</h3>
+                                    <h3 class="card-title fw-bold text-primary">{{ $review->user->nickname }}</h3>
                                 </div>
                                 <div class="col">
                                     <div class="rating">
@@ -127,9 +128,9 @@
                                 </div>
                             </div>
                             <hr>
-                            <h3 class="card-text">{{ $review->title }}</h3>
+                            {{-- <h3 class="card-text">{{ $review->title }}</h3> --}}
                             <p class="card-text">{{ $review->comment }}</p>
-                            <p class="card-text"><small class="text-muted">Date du commentaire : {{ $review->updated_at }}</small></p>
+                            <p class="card-text"><small class="text-muted fst-italic">Date du commentaire : {{ $review->updated_at }}</small></p>
                         </div>
                     </div>
                 </div>
