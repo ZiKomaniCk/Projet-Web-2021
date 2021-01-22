@@ -7,7 +7,7 @@
     <p class="text-white">Barre a faire</p>
 </div>
 
-<div class="container" style="background-color: #333333">
+<div class="container" style="background-color: #333333; border-color: #ff8433; border-style:solid;">
 
     {{-- <nav aria-label="Page navigation example" class="pt-3" >
         <ul class="pagination justify-content-center">

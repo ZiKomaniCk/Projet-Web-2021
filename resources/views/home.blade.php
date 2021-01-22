@@ -11,9 +11,9 @@
       <div class="col-md-8">
         <div class="card-body rounded-2">
           <div class="card-body rounded-2">
-            <h5 class="card-title fs-1 fw-bold text-primary">{{$user->nickname}}</h5>
+            <h5 class="card-title fs-1 fw-bold text-primary" style="text-shadow: -2px 2px  #1e1e1e;">{{$user->nickname}}</h5>
             <hr>
-            <h5 class="text-end fs-3" style="margin-bottom">crédit: {{$user->credit}}</h5>
+            <h5 class="text-end fs-3" style="margin-bottom">Crédits: {{$user->credit}}</h5>
           </div>
         </div>
       </div>
@@ -27,11 +27,11 @@
       
       <div class="card rounded-2 border-primary">
         <div class="card-body">
-          <h5 class="card-title fs-4 text-center">Information personnelles</h5>
+          <h5 class="card-title fs-4 text-center text-primary fw-bold">Information personnelles</h5>
           <p class="card-text fs-6">Nom : {{$user->lastName}}</p>
           <p class="card-text fs-6">Prénom : {{$user->firstName}}</p>
           <p class="card-text fs-6">Email : {{$user->email}}</p>
-          <p class="card-text fs-6">birthDate : {{$user->birthDate}}</p>
+          <p class="card-text fs-6">Date d'anniversaire : {{$user->birthDate}}</p>
           <a class="btn btn-primary text-white" href="{{ route('admin.users.edit', ['user' => Auth::user()]) }}">
             Modifier le profil
           </a>
