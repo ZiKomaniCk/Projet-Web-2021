@@ -42,34 +42,31 @@
     <div class="col-sm-8 ">
       <div class="row">
         @foreach ($user->games as $game)
-          <div class="col-sm-4">
-            <div class="card " style="width: 15rem;">
-              <img src="{{$game->pathImage}}" class="card-img-top" alt="...">
-              <div class="card-body shadow-sm" style="background-color: #1e1e1e">
-                  <h5 class="card-title text-primary fs-4 fw-bold">{{$game->name}}</h5>
-                  <div class="row justify-content-center mb-3">
-                      <div class="col-8">
-                          <p class="card-text fs-6 fw-light">{{$game->company}}</p>
-                      </div>
-                      <div class="col-4">
-                          <p class="card-text fs-5 fw-bold">{{$game->price}}€</p>
-                      </div>
-                  </div>
-                  <a href="{{ route('games.show', ['game' => $game]) }}" class="btn btn-primary text-white">Voir plus</a>
-                  @if ($user->hasReview($game->id))
-                    <a href="{{ route('reviews.show', ['review' => $user->getReview($game->id)]) }}" class="btn btn-primary text-white">Voir Avis</a>
-                  @else
-                    <a href="{{ route('reviews.create', ['game' => $game]) }}" class="btn btn-primary text-white">Ajouter Avis</a>
-                  @endif
-              
+        <div class="col-sm-4">
+          <div class="card " style="width: 15rem;">
+            <img src="{{$game->pathImage}}" class="card-img-top" alt="...">
+            <div class="card-body shadow-sm" style="background-color: #1e1e1e">
+              <h5 class="card-title text-primary fs-4 fw-bold">{{$game->name}}</h5>
+              <div class="row justify-content-center mb-3">
+                <div class="col-8">
+                  <p class="card-text fs-6 fw-light">{{$game->company}}</p>
                 </div>
+                <div class="col-4">
+                  <p class="card-text fs-5 fw-bold">{{$game->price}}€</p>
+                </div>
+              </div>
+              <a href="{{ route('games.show', ['game' => $game]) }}" class="btn btn-primary text-white">Voir plus</a>
+              @if ($user->hasReview($game->id))
+              <a href="{{ route('reviews.show', ['review' => $user->getReview($game->id)]) }}" class="btn btn-primary text-white">Voir Avis</a>
+              @else
+              <a href="{{ route('reviews.create', ['game' => $game]) }}" class="btn btn-primary text-white">Ajouter Avis</a>
+              @endif
             </div>
           </div>
+        </div>
         @endforeach
       </div>
-      </div>
     </div>
-    
   </div>
 </div>
 @endsection
