@@ -11,6 +11,7 @@
             <div class="col-md-8">
                 <div class="card-body">
                     <h1 class="card-title fw-bold text-primary" style="text-shadow: -2px 2px  #1e1e1e;"  >{{ $game->name }}</h1>
+                    <hr>
                     <p class="card-text fw-bold fs-4">Disponible sur 
                         <span class="text-primary">
                             {{ $game->platform }}
