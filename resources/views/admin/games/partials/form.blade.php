@@ -41,6 +41,20 @@
 </div>
 
 <div class="form-group row">
+    <label for="quantity" class="col-md-4 col-form-label text-md-right">{{ __('Quantité') }}</label>
+    
+    <div class="col-md-6">
+        <input id="quantity" type="number" class="form-control @error('quantity') is-invalid @enderror" name="quantity" value="{{ $game->quantity ?? '' }}" required placeholder="17" autocomplete="quantity" autofocus>
+        
+        @error('quantity')
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+        </span>
+        @enderror
+    </div>
+</div>
+
+<div class="form-group row">
     <label for="description" class="col-md-4 col-form-label text-md-right">{{ __('Description') }}</label>
     
     <div class="col-md-6">
@@ -57,11 +71,13 @@
     <label for="status" class="col-md-4 col-form-label text-md-right ">Statut</label>
     <div id="status" class="col-md-6">
         <div class="mt-2">
-            <input type="radio" name="visible" value="1">
+            <input type="radio" name="visible" value="1"
+            @if ($game->visible == 1) checked @endif>
             <label>Visible</label>
         </div>
         <div class="mt-2">
-            <input type="radio" name="visible" value="0" checked>
+            <input type="radio" name="visible" value="0" 
+            @if ($game->visible == 0) checked @endif>
             <label>Caché</label>
         </div>
     </div>
@@ -70,7 +86,8 @@
 <div class="form-group row">
     <label for="pathImage" class="col-md-4 col-form-label text-md-right">{{ __('Image du Jeu') }}</label>
     <div class="col-md-6">
-        <input id="pathImage" type="file" class="form-control" name="pathImage" required >
+        <input id="pathImage" type="file" class="form-control" name="pathImage"
+        @if ($update != 'yes') required @endif  >
     </div>
 </div>
 
@@ -78,7 +95,7 @@
     <label for="releaseDate" class="col-md-4 col-form-label text-md-right">{{ __("Date de sortie du jeu") }}</label>
     
     <div class="col-md-6">
-        <input id="releaseDate" type="date" class="form-control @error('releaseDate') is-invalid @enderror" name="releaseDate" value="{{ $user->releaseDate ?? '' }}" required autocomplete="releaseDate">
+        <input id="releaseDate" type="date" class="form-control @error('releaseDate') is-invalid @enderror" name="releaseDate" value="{{ $game->releaseDate ?? '' }}" required autocomplete="releaseDate">
         
         @error('releaseDate')
         <span class="invalid-feedback" role="alert">

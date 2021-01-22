@@ -42,6 +42,7 @@ class GameController extends Controller
         $newGame->name = $request->name;
         $newGame->price = $request->price;
         $newGame->score = $request->score;
+        $newGame->quantity = $request->quantity;
         $newGame->description = $request->description;
         $newGame->visible = $request->visible;
         $newGame->activationCode = $faker->swiftBicNumber;
@@ -86,6 +87,7 @@ class GameController extends Controller
         // $updateGame->name = $request->name;
         // $updateGame->price = $request->price;
         // $updateGame->score = $request->score;
+        // $updateGame->quantity = $request->quantity;
         // $updateGame->description = $request->description;
         // $updateGame->visible = $request->visible;
         // $updateGame->activationCode = $faker->swiftBicNumber;

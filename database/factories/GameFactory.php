@@ -10,6 +10,7 @@ $factory->define(Game::class, function (Faker $faker) {
         'name' => $faker->name,
         'price' => $faker->numberBetween($min = 30, $max = 70),
         'score' => $faker->numberBetween($min = 0, $max = 20),
+        'quantity' => $faker->numberBetween($min = 10, $max = 50),
         'visible' => $faker->randomElement(['0' ,'1']),
         'activationCode' => $faker->swiftBicNumber,
         'pathImage' => $faker->imageUrl($width = 420 , $height = 580),

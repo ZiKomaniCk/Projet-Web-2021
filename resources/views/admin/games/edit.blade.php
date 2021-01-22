@@ -14,7 +14,7 @@
                     <form method="POST" action="{{ route('admin.games.update', ['game' => $game]) }}" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
-                        @include('admin.games.partials.form')
+                        @include('admin.games.partials.form', ['update' => 'yes'])
                         <button type="submit" class="btn btn-primary text-white">Modifier</button>
                     </form>
                 </div>

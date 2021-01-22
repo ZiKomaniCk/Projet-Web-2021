@@ -13,7 +13,7 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('admin.games.store') }}" enctype="multipart/form-data">
                         @csrf
-                        @include('admin.games.partials.form')
+                        @include('admin.games.partials.form', ['update' => 'no'])
                         <button type="submit" class="btn btn-primary text-white">Creer</button>
                     </form>
                 </div>
