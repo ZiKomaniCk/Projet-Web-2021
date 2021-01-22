@@ -28,10 +28,10 @@
 
     <div class="row justify-content-center ">
         @foreach ($games as $game)
-            <div class="col-sm-4 p-3">
-                <div class="card " style="width: 18rem;">
+            <div class="col-sm-4 p-4">
+                <div class="card rounded-2 shadow-sm" style="width: 18rem;">
                     <img src="{{$game->pathImage}}" class="card-img-top" alt="...">
-                    <div class="card-body shadow-sm" style="background-color: #1e1e1e">
+                    <div class="card-body" style="background-color: #1e1e1e">
                         <h5 class="card-title text-primary fs-4 fw-bold">{{$game->name}}</h5>
                         <div class="row justify-content-center mb-3">
                             <div class="col-9">

@@ -3,10 +3,10 @@
 @section('content')
 
 <div class="container">
-    <div class="card mb-3" >
+    <div class="card mb-3 rounded-2" >
         <div class="row g-0">
             <div class="col-md-4">
-                <img src="{{ $game->pathImage }}" alt="..." style="width: 310px">
+                <img src="{{ $game->pathImage }}" alt="..." style="width: 350px">
             </div>
             <div class="col-md-8">
                 <div class="card-body">
@@ -47,10 +47,16 @@
                             <img class="ml-5" src="/images/pegi/{{$game->pegi}}.jpg" alt="" style="width: 80px">
                         </div>
                         <div class="col-md-6" >
+                            
+                            <span class="text-white mt-4 fs-1 fw-bold bg-gray1e pt-2 pb-2 pl-4 pr-4 rounded-pill" style="float: right">
+                                {{ $game->price }}€
+                                <button class="btn btn-primary text-white fs-3 fw-bold ">Acheter</button>
+                            </span>
+
                             @can('manage-users')
-                                <span class="ml-2" style="float: right">
+                                <span class="" style="float: right">
                                         <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="optionsDrop" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <button class="btn btn-gray1e dropdown-toggle ml-2" type="button" id="optionsDrop" data-bs-toggle="dropdown" aria-expanded="false">
                                             Admin Options
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="optionsDrop">
@@ -59,7 +65,7 @@
                                                 <form action="{{ route('admin.games.destroy', ['game' => $game]) }}" method="POST" >
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class=" dropdown-item btn btn-danger">Delete</button>
+                                                    <button type="submit" class=" dropdown-item btn btn-danger">Supprimer</button>
                                                 </form>
                                                 {{-- <a class="dropdown-item" href="{{ route('games.show', ['game' => $game]) }}">Supprimer</a> --}}
                                             </li>
@@ -67,11 +73,6 @@
                                     </div>
                                 </span>
                             @endcan
-                        
-                            <span class="text-white mt-4 fs-1 fw-bold bg-gray1e pt-2 pb-2 pl-4 pr-4 rounded-pill" style="float: right">
-                                {{ $game->price }}€
-                                <button class="btn btn-primary text-white fs-3 fw-bold ">Acheter</button>
-                            </span>
                         </div>
                     </div>
                 </div>
@@ -80,7 +81,7 @@
     </div>
     
     <div class="container pl-6 pr-6">
-        <div class="card ">
+        <div class="card mt-4 rounded-2 ">
             <h2 class="text-primary mb-3 ml-3 mt-3 fw-bold">Description :</h2>
             <div class="container">
                 <div class="pl-5 pr-5 overflow-auto mb-5 text-white bg-gray1e rounded" style="max-width: 100%; max-height: 280px;">
@@ -97,7 +98,7 @@
         @foreach ($game->reviews as $review)
         <div class="col-md-6">
             
-            <div class="card mb-3 " >
+            <div class="card mt-5 rounded-2 border-primary" >
                 <div class="row g-0">
                     <div class="col-md-4">
                         <img src="{{ $review->user->imgPath }}" alt="image de profil" style="max-width: 160px;">

@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card border border-primary shadow">
+            <div class="card border border-primary rounded-2 shadow">
                 <div class="card-header text-white fs-4">{{ __("S'enregister") }}</div>
 
                 <div class="card-body">
