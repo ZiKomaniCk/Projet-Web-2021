@@ -51,8 +51,10 @@
                             
                             <span class="text-white mt-4 fs-1 fw-bold bg-gray1e pt-2 pb-2 pl-4 pr-4 rounded-pill" style="float: right">
                                 {{ $game->price }}€
-                                <button class="btn btn-primary text-white fs-3 fw-bold ">Acheter</button>
+                                <button type="button" data-bs-target="#modalGame" data-bs-toggle="modal" class="btn btn-primary text-white fs-3 fw-bold ">Acheter</button>
                             </span>
+                           
+                            @include('games.partials.modal')
 
                             @can('manage-users')
                                 <span class="" style="float: right">
@@ -161,4 +163,3 @@
 </div>
 
 @endsection
-
