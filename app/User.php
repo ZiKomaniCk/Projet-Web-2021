@@ -37,6 +37,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    // relations
     public function roles(){
         return $this->belongsToMany('App\Role');
     }
@@ -49,6 +50,11 @@ class User extends Authenticatable
         return $this->hasMany(Review::class);
     }
 
+    public function carts() {
+        return $this->hasMany(Review::class);
+    }
+
+    // additionals fonctions
     public function hasReview($game_id){
         if($this->reviews()->where('game_id', $game_id)->first()){
             return true;

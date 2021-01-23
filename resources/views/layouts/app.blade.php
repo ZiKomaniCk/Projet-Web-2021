@@ -102,9 +102,10 @@
                         @endguest
                         <li class="nav-item ">
                             @guest
-                                <p class="nav-link text-white mt-3">Panier</p>
+                                {{-- <a class="nav-link" href="{{ route('login') }}">{{ __('Connexion') }}</a> --}}
+                                <a href="{{ route('login') }}" class="nav-link text-white mt-3">Panier</a>
                             @else
-                                <p class="nav-link text-white mt-3">Panierre</p>
+                                <a href="{{ route('carts.index', ['user' => Auth::user()]) }}" class="nav-link text-white mt-3">Panierre</a>
                             @endguest
                         </li>
                     </ul>
