@@ -10,7 +10,7 @@
                 <div class="col-md-8 mb-3">
                     <div class="card border border-primary rounded-2 shadow">
                         <div class="card-header text-white fs-5">{{ $product->game->name }}</div>
-        
+
                         <div class="card-body">
                             <p>{{ $product->game->name }}</p>
                             <p>Ajouter au pannier le : {{ $product->created_at }}</p>

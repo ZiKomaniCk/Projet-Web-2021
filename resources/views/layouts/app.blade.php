@@ -105,7 +105,9 @@
                                 {{-- <a class="nav-link" href="{{ route('login') }}">{{ __('Connexion') }}</a> --}}
                                 <a href="{{ route('login') }}" class="nav-link text-white mt-3">Panier</a>
                             @else
-                                <a href="{{ route('carts.index', ['user' => Auth::user()]) }}" class="nav-link text-white mt-3">Panierre</a>
+                                <a href="{{ route('carts.index') }}" class="nav-link text-white mt-3">
+                                    Panier {{ count(Auth::user()->carts) }}
+                                </a>
                             @endguest
                         </li>
                     </ul>

@@ -51,10 +51,16 @@
                             
                             <span class="text-white mt-4 fs-1 fw-bold bg-gray1e pt-2 pb-2 pl-4 pr-4 rounded-pill" style="float: right">
                                 {{ $game->price }}€
-                                <button type="button" data-bs-target="#modalGame" data-bs-toggle="modal" class="btn btn-primary text-white fs-3 fw-bold ">Acheter</button>
+                                @guest
+                                    <a href="{{ route('login') }}"  class="btn btn-primary text-white fs-3 fw-bold ">Acheter</a>
+                                @else
+                                    <button type="button" data-bs-target="#modalGame" data-bs-toggle="modal" class="btn btn-primary text-white fs-3 fw-bold ">Acheter</button>
+                                    @endguest
                             </span>
-                           
-                            @include('games.partials.modal')
+                                @include('games.partials.modal', ['game' => $game])
+                            
+                                
+                            
 
                             @can('manage-users')
                                 <span class="" style="float: right">
