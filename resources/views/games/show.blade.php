@@ -50,7 +50,7 @@
                 <div class="mt-3">
                     <div class="row">
                         <div class="col-md-4">
-                            <img class="ml-5" src="/images/pegi/{{$game->pegi}}.jpg" alt="" style="width: 80px">
+                            <img class="ml-5" src="/images/pegi/{{$game->pegi}}.jpg" alt="" style="width: 90px">
                         </div>
                         <div class="col-md-6" >
                             
