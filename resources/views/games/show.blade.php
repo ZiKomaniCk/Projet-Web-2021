@@ -6,10 +6,10 @@
     <div class="card mb-3 rounded-2" >
         <div class="row g-0">
             <div class="col-md-4">
-                <img src="{{ $game->pathImage }}" alt="..." style="width: 350px">
+                <img src="{{ $game->pathImage }}" alt="..." style="width: 390px">
             </div>
             <div class="col-md-8">
-                <div class="card-body">
+                <div class="card-body ml-4">
                     <h1 class="card-title fw-bold text-primary" style="text-shadow: -2px 2px  #1e1e1e;"  >{{ $game->name }}</h1>
                     <hr>
                     <p class="card-text fw-bold fs-4">Disponible sur 
@@ -22,17 +22,22 @@
                             {{ $game->company }}
                         </span>
                     </p>
+                    <p class="card-text fs-5 fw-bold">Genre
+                        <span class="text-primary">
+                            {{-- {{ $game->genre->name}} --}}
+                        </span>
+                    </p>
                     <div class="row">
                         <div class="col-md-6 mt-5">
                             <p class="card-text"><small class="text-muted fs-6 fst-italic">Date de sortie : {{ $game->releaseDate }}</small></p>
                         </div>
-                        <div class="col-md-6 mt-5">
+                        <div class="col-md-6 mt-4">
                             <p class="card-text">
 
                                     <span class="text-primary fw-bold fs-2">
                                         Score
                                     </span>
-                                    <span class="fs-2 fw-bold rounded-circle pb-3 pt-4 pl-1 pr-1"style='background-color: #ff8433'>
+                                    <span class="fs-2 fw-bold rounded-circle pb-3 pt-4 pl-1 pr-1"style='background-color: #149e42'>
                                         {{ $game->score }}/20
                                     </span>
 
@@ -45,7 +50,7 @@
                 <div class="mt-3">
                     <div class="row">
                         <div class="col-md-4">
-                            <img class="ml-5" src="/images/pegi/{{$game->pegi}}.jpg" alt="" style="width: 80px">
+                            <img class="ml-5" src="/images/pegi/{{$game->pegi}}.jpg" alt="" style="width: 90px">
                         </div>
                         <div class="col-md-6" >
                             
