@@ -5,6 +5,7 @@
 
     <div class="container">
         <h1 class="mb-5 text-primary" style="text-align: center">Votre pannier</h1>
+        <a href="{{ route('buy') }}" class="btn btn-primary">acheter</a>
         <div class="row justify-content-center">
             @foreach ($products as $product)
                 <div class="col-md-8 mb-3">
@@ -17,6 +18,11 @@
                             <p>{{ $product->game->price }} €</p>
                             {{-- <img src="{{ $product->game->pathImage }}"/> --}}
                             <a class="btn btn-primary" href="{{ route('games.show', ['game' => $product->game]) }}">Voir le jeu</a>
+                            <form action="{{ route('carts.destroy', ['cart' => $product]) }}" method="POST" >
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Supprimer</button>
+                            </form>
                         </div>
                     </div>
                 </div>
