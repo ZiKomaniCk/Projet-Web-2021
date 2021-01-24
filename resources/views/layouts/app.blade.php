@@ -105,9 +105,13 @@
                                 {{-- <a class="nav-link" href="{{ route('login') }}">{{ __('Connexion') }}</a> --}}
                                 <a href="{{ route('login') }}" class="nav-link text-white mt-3">Panier</a>
                             @else
-                                <a href="{{ route('carts.index') }}" class="nav-link text-white mt-3">
-                                    Panier {{ count(Auth::user()->carts) }}
+                                <a href="#" class="nav-link text-white mt-3">
+                                    Panier <span class="badge badge-pill badge-dark">{{ Cart::count()}}</span>
+
                                 </a>
+                                {{-- <a href="{{ route('carts.index') }}" class="nav-link text-white mt-3">
+                                    Panier {{ count(Auth::user()->carts) }}
+                                </a> --}}
                             @endguest
                         </li>
                     </ul>
