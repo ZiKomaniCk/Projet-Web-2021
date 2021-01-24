@@ -28,10 +28,10 @@
       <div class="card rounded-2 border-primary">
         <div class="card-body">
           <h5 class="card-title fs-4 text-center text-primary fw-bold">Information personnelles</h5>
-          <p class="card-text fs-6">Nom : {{$user->lastName}}</p>
-          <p class="card-text fs-6">Prénom : {{$user->firstName}}</p>
-          <p class="card-text fs-6">Email : {{$user->email}}</p>
-          <p class="card-text fs-6">Date d'anniversaire : {{$user->birthDate}}</p>
+          <p class="card-text fs-5">Nom : {{$user->lastName}}</p>
+          <p class="card-text fs-5">Prénom : {{$user->firstName}}</p>
+          <p class="card-text fs-5">Email : {{$user->email}}</p>
+          <p class="card-text fs-5">Date d'anniversaire : {{$user->birthDate}}</p>
           <a class="btn btn-primary text-white" href="{{ route('admin.users.edit', ['user' => Auth::user()]) }}">
             Modifier le profil
           </a>
