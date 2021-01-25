@@ -2,6 +2,13 @@
 
 
 @section('content')
+@if (session('success'))
+<div class="container">
+    <div class="alert alert-success ">
+        {{ session('success') }}
+    </div>
+</div>
+@endif 
 @if (Cart::count() > 0)
 
 <div class="px-4 px-lg-0">
@@ -44,10 +51,9 @@
                                     <td class="border-bottom-0 border-dark align-middle"><strong>{{ $product->model->price }} €</strong></td>
                                     <td class="border-bottom-0 border-dark align-middle"><strong>1</strong></td>
                                     <td class="border-bottom-0 border-dark align-middle">
-                                        <form action="{{ route('carts.destroy') }}" method="POST">
+                                        <form action="{{ route('carts.destroy',  $product->rowId) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
-
 
                                             <button type="submit">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
@@ -55,7 +61,6 @@
                                                 </svg>
                                             </button>
                                         </form>
-                                        <a href="{{ route('carts.destroy', ['rowId' => $product->model->id]) }}" class="text-dark">
                                             
                                         </a>
                                     </td>
