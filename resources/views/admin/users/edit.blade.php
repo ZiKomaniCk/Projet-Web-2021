@@ -44,7 +44,7 @@
                         <img class="mb-4"  src="{{$user->imgPath}}" alt="User image profile" style="width: 18rem; display: block; margin-left: auto; margin-right: auto; ">
                         
                         <div class="form-group row">
-                            <label for="imgPath" class="col-md-4 col-form-label text-md-right">{{ __('Profil Image') }}</label>
+                            <label for="imgPath" class="col-md-4 col-form-label text-md-right">{{ __('Image de profil') }}</label>
                             
                             <div class="col-md-6">
                                 <input id="imgPath" type="file" class="form-control" name="imgPath"  >

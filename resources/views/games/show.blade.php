@@ -119,7 +119,7 @@
             <div class="card mt-5 rounded-2 border-primary" >
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="{{ $review->user->imgPath }}" alt="image de profil" style="max-width: 160px;">
+                        <img src="{{ $review->user->imgPath }}" alt="image de profil" style="width: 160px;">
                         
                         @if ( !empty(Auth::user()->id) && (Auth::user()->id == $review->user_id|| Auth::user()->hasRole('admin')))
                             <div class="row mt-4">

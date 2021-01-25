@@ -8,7 +8,7 @@
                 <div class="card mb-3 " >
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img class="ml-5 mt-2" src="{{ $review->user->imgPath }}" alt="image de profil" style="max-width: 160px;">
+                            <img class="ml-5 mt-2" src="{{ $review->user->imgPath }}" alt="image de profil" style="width: 160px;">
                             @if (Auth::user()->id == $review->user_id)
                                 <div class="row mt-4">
                                     <div class="col-5 ml-3">

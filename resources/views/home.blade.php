@@ -6,7 +6,7 @@
   <div class="card mb-3 rounded-2 border-primary">
     <div class="row g-0">
       <div class="col-md-4">
-        <img src="{{$user->imgPath}}" class="profilePicture" style="max-width: 250px;" alt="Votre photo de profil">
+        <img src="{{$user->imgPath}}" class="profilePicture" style="width: 250px;" alt="Votre photo de profil">
       </div>
       <div class="col-md-8">
         <div class="card-body rounded-2">
@@ -32,7 +32,7 @@
           <p class="card-text fs-5">Prénom : {{$user->firstName}}</p>
           <p class="card-text fs-5">Email : {{$user->email}}</p>
           <p class="card-text fs-5">Date d'anniversaire : {{$user->birthDate}}</p>
-          <a class="btn btn-primary text-white" href="{{ route('admin.users.edit', ['user' => Auth::user()]) }}">
+          <a class="btn btn-primary text-white fs-6" href="{{ route('admin.users.edit', ['user' => Auth::user()]) }}">
             Modifier le profil
           </a>
         </div>

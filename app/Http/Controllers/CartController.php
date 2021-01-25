@@ -37,7 +37,7 @@ class CartController extends Controller
     {
         Cart::add($request->id, $request->name, 1, $request->price)
         ->associate('App\Game');
-        return redirect(route('games.index'))->with('success', 'Le produit a bien ete ajoute');
+        return redirect(route('games.index'))->with('success', 'Le jeu a bien été ajouté a votre panier');
     }
 
     /**
