@@ -16,7 +16,7 @@ class GenreSeeder extends Seeder
         $games = Game::all();
         factory(Genre::class, 10)->create()->each(function ($genre) use ($games) {
             $genre->games()->attach(
-                $games->random(rand(1,3))->pluck('id')->toArray()
+                $games->random(1)->pluck('id')->toArray()
             );
         });
     }
