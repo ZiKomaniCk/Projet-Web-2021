@@ -136,6 +136,21 @@
     </div>
 </div>
 
+<div class="form-group row">
+    <label for="genre_id" class="col-md-4 col-form-label text-md-right ">Genre</label>
+    <div class="col-md-6">
+        <div class="mt-2">
+            <select id="genre_id" class="custom-select" name="genre_id">
+                @foreach ($genres as $genre)
+                <option @if ($game ?? '' && $game->genre_id == $genre->id) selected @endif
+                    value="{{$genre->id}}">{{$genre->name}} {{$genre->type}}
+                </option>
+                @endforeach
+            </select>
+        </div>
+    </div>
+</div>
+
 
 <div class="form-group row">
     <label for="platform" class="col-md-4 col-form-label text-md-right ">Platforme</label>

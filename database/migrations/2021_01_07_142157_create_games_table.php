@@ -27,6 +27,7 @@ class CreateGamesTable extends Migration
             $table->string('company');
             $table->integer('pegi');
             $table->string('platform');
+            $table->integer('genre_id')->nullable();
             $table->timestamps();
         });
     }

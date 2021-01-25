@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Game;
+use App\Genre;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Faker\Generator as Faker;
@@ -27,7 +28,8 @@ class GameController extends Controller
      */
     public function create()
     {
-        return view('admin.games.create');
+        $genres = Genre::all();
+        return view('admin.games.create', ['genres' => $genres]);
     }
 
     /**
@@ -50,6 +52,7 @@ class GameController extends Controller
         $newGame->company = $request->company;
         $newGame->pegi = $request->pegi;
         $newGame->platform = $request->platform;
+        $newGame->genre = $request->genre;
 
         $file = $request->file('pathImage');
         $newGame->pathImage = '/images/games/' . $file->getClientOriginalName();
@@ -68,7 +71,8 @@ class GameController extends Controller
      */
     public function edit(Game $game)
     {
-        return view('admin.games.edit', ['game' => $game]);
+        $genres = Genre::all();
+        return view('admin.games.edit', ['game' => $game, 'genres' => $genres]);
     }
 
     /**
@@ -92,6 +96,7 @@ class GameController extends Controller
         $updateGame->company = $request->company;
         $updateGame->pegi = $request->pegi;
         $updateGame->platform = $request->platform;
+        $updateGame->genre = $request->genre;
 
         if ($request->hasFile('pathImage')){
             print_r('file');
