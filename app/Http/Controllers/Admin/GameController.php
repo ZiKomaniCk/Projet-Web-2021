@@ -52,7 +52,7 @@ class GameController extends Controller
         $newGame->company = $request->company;
         $newGame->pegi = $request->pegi;
         $newGame->platform = $request->platform;
-        $newGame->genre = $request->genre;
+        $newGame->genre_id = $request->genre_id;
 
         $file = $request->file('pathImage');
         $newGame->pathImage = '/images/games/' . $file->getClientOriginalName();
@@ -96,7 +96,7 @@ class GameController extends Controller
         $updateGame->company = $request->company;
         $updateGame->pegi = $request->pegi;
         $updateGame->platform = $request->platform;
-        $updateGame->genre = $request->genre;
+        $updateGame->genre_id = $request->genre_id;
 
         if ($request->hasFile('pathImage')){
             print_r('file');
