@@ -6,23 +6,23 @@
     <div class="card mb-3 rounded-2" >
         <div class="row g-0">
             <div class="col-md-4">
-                <img src="{{ $game->pathImage }}" alt="..." style="width: 390px">
+                <img src="{{ $game->pathImage }}" alt="image du jeu" style="width: 390px; height: 565px;">
             </div>
             <div class="col-md-8">
                 <div class="card-body ml-4">
                     <h1 class="card-title fw-bold text-primary" style="text-shadow: -2px 2px  #1e1e1e;"  >{{ $game->name }}</h1>
                     <hr>
-                    <p class="card-text fw-bold fs-4">Disponible sur 
-                        <span class="text-primary">
-                            {{ $game->platform }}
-                        </span>
-                    </p>
-                    <p class="card-text fs-5 mt-4 fw-bold">Developpé par 
+                    <p class="card-text fs-3 fw-bold">Developpé par 
                         <span class="text-primary">
                             {{ $game->company }}
                         </span>
                     </p>
-                    <p class="card-text fs-5 fw-bold">Genre
+                    <p class="card-text fw-bold fs-5 mt-4">Disponible sur 
+                        <span class="text-primary">
+                            {{ $game->platform }}
+                        </span>
+                    </p>
+                    <p class="card-text fs-5 fw-bold">Genre : 
                         
                         <span class="text-primary">
                             {{ $game->genre->name }}
