@@ -5,9 +5,11 @@
     <div class="row justify-content-center">
         <div class="col-md-14">
             <div class="card border-primary">
-                <div class="card-header text-primary fs-3">Listes des jeux</div>
+                <div class="card-header text-primary fs-3">Liste des jeux
+                    <a class="btn btn-primary text-white fs-5 pl-5 pr-5 float-right" href="{{ route('admin.games.create') }}">Ajouter un jeu</a>
+                </div>
                 <div class="">
-                    <a class="btn btn-primary text-white fs-5 pl-5 pr-5" href="{{ route('admin.games.create') }}">Ajouter un jeu</a>
+
                 </div>
                 
                 <div class="mx-auto" style="width: 120px;">
