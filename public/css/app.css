@@ -2152,7 +2152,7 @@ pre code {
   background-color: #f6f6f6;
   border-color: #49e87e;
   outline: 0;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 0.2rem rgba(20, 158, 66, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(20, 158, 66, 0.25);
 }
 
 .form-control::-moz-placeholder {
@@ -2661,16 +2661,6 @@ textarea.form-control.is-invalid {
   cursor: pointer;
 }
 
-.btn:not(:disabled):not(.disabled):active,
-.btn:not(:disabled):not(.disabled).active {
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-}
-
-.btn:not(:disabled):not(.disabled):active:focus,
-.btn:not(:disabled):not(.disabled).active:focus {
-  box-shadow: 0 0 0 0.2rem rgba(20, 158, 66, 0.25), inset 0 3px 5px rgba(0, 0, 0, 0.125);
-}
-
 a.btn.disabled,
 fieldset:disabled a.btn {
   pointer-events: none;
@@ -2680,7 +2670,6 @@ fieldset:disabled a.btn {
   color: #f6f6f6;
   background-color: #149e42;
   border-color: #149e42;
-  box-shadow: inset 0 1px 0 rgba(246, 246, 246, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 
 .btn-primary:hover {
@@ -2694,7 +2683,7 @@ fieldset:disabled a.btn {
   color: #f6f6f6;
   background-color: #107c34;
   border-color: #0e712f;
-  box-shadow: inset 0 1px 0 rgba(246, 246, 246, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 0.2rem rgba(54, 171, 93, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(54, 171, 93, 0.5);
 }
 
 .btn-primary.disabled,
@@ -2715,7 +2704,7 @@ fieldset:disabled a.btn {
 .btn-primary:not(:disabled):not(.disabled):active:focus,
 .btn-primary:not(:disabled):not(.disabled).active:focus,
 .show > .btn-primary.dropdown-toggle:focus {
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125), 0 0 0 0.2rem rgba(54, 171, 93, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(54, 171, 93, 0.5);
 }
 
 .btn-secondary {
@@ -2763,7 +2752,6 @@ fieldset:disabled a.btn {
   color: #f6f6f6;
   background-color: #149e42;
   border-color: #149e42;
-  box-shadow: inset 0 1px 0 rgba(246, 246, 246, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 
 .btn-success:hover {
@@ -2777,7 +2765,7 @@ fieldset:disabled a.btn {
   color: #f6f6f6;
   background-color: #107c34;
   border-color: #0e712f;
-  box-shadow: inset 0 1px 0 rgba(246, 246, 246, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 0.2rem rgba(54, 171, 93, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(54, 171, 93, 0.5);
 }
 
 .btn-success.disabled,
@@ -2798,7 +2786,7 @@ fieldset:disabled a.btn {
 .btn-success:not(:disabled):not(.disabled):active:focus,
 .btn-success:not(:disabled):not(.disabled).active:focus,
 .show > .btn-success.dropdown-toggle:focus {
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125), 0 0 0 0.2rem rgba(54, 171, 93, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(54, 171, 93, 0.5);
 }
 
 .btn-info {
@@ -3039,7 +3027,7 @@ fieldset:disabled a.btn {
 .btn-outline-primary:not(:disabled):not(.disabled):active:focus,
 .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-primary.dropdown-toggle:focus {
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125), 0 0 0 0.2rem rgba(20, 158, 66, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(20, 158, 66, 0.5);
 }
 
 .btn-outline-secondary {
@@ -3111,7 +3099,7 @@ fieldset:disabled a.btn {
 .btn-outline-success:not(:disabled):not(.disabled):active:focus,
 .btn-outline-success:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-success.dropdown-toggle:focus {
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125), 0 0 0 0.2rem rgba(20, 158, 66, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(20, 158, 66, 0.5);
 }
 
 .btn-outline-info {
@@ -3977,7 +3965,7 @@ input[type=button].btn-block {
 }
 
 .custom-control-input:focus ~ .custom-control-label::before {
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 0.2rem rgba(20, 158, 66, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(20, 158, 66, 0.25);
 }
 
 .custom-control-input:focus:not(:checked) ~ .custom-control-label::before {
@@ -4124,7 +4112,7 @@ input[type=button].btn-block {
 .custom-select:focus {
   border-color: #49e87e;
   outline: 0;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075), 0 0 0 0.2rem rgba(20, 158, 66, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(20, 158, 66, 0.25);
 }
 
 .custom-select:focus::-ms-value {
