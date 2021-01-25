@@ -11,7 +11,7 @@
         {{ $games->links() }}
     </div>
 
-    <table class="table text-white">
+    <table class="table text-white fs-5">
         <thead>
             <tr>
                 <th scope="col">#</th>
