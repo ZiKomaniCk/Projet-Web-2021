@@ -1,6 +1,7 @@
 <?php
 
 use App\Game;
+use App\Genre;
 use App\Review;
 use Illuminate\Database\Seeder;
 
@@ -26,8 +27,16 @@ class GameSeeder extends Seeder
                 "game_id" => $game->id,
                 "user_id" => 2,
             ]);
+            
+            // factory(Genre::class, 1)->create()->each(function ($genre, $game){
+            //     $genre->save();
+            //     $genre->sync($game);
+            // });
+
 
         });
+
+        
     }
 }
 // $table->integer('game_id');
