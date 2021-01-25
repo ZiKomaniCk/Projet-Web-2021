@@ -15,7 +15,7 @@
                 <div class="card rounded-2 shadow" style="width: 18rem;">
                     <img src="{{$game->pathImage}}" class="card-img-top" alt="...">
                     <div class="card-body" style="background-color: #1e1e1e">
-                        <h5 class="card-title text-primary fs-4 fw-bold">{{$game->name}}</h5>
+                        <h5 class="card-title text-primary fs-4 fw-bold" style="text-shadow: -2px 2px  #183518;">{{$game->name}}</h5>
                         <div class="row justify-content-center mb-3">
                             <div class="col-9">
                                 <p class="card-text fs-5 fw-light fw-bold">{{$game->company}}</p>
@@ -24,7 +24,7 @@
                                 <p class="card-text fs-5 fw-bold">{{$game->price}}€</p>
                             </div>
                         </div>
-                        <a href="{{ route('games.show', ['game' => $game]) }}" class="btn btn-primary text-white">Voir plus</a>
+                        <a href="{{ route('games.show', ['game' => $game]) }}" class="btn btn-primary text-white" style="float:right ;">Voir plus</a>
                     </div>
                 </div>
             </div>

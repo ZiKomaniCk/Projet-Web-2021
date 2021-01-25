@@ -4,11 +4,11 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Users</div>
+            <div class="card border-primary">
+                <div class="card-header fs-3 text-primary">Listes des utilisateurs</div>
                 
                 <div class="card-body">
-                    <table class="table">
+                    <table class="table text-white">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
@@ -28,11 +28,11 @@
                                     <td>{{ $user->email }}</td> 
                                     <td>{{ implode(', ', $user->roles()->get()->pluck('name')->toArray()) }}</td> 
                                     <td>
-                                        <a href="{{ route('admin.users.edit', ['user' => $user]) }}" type="button" class="btn btn-warning ">Edit</a>
                                         <form action="{{ route('admin.users.destroy', ['user' => $user]) }}" method="POST" >
+                                            <a href="{{ route('admin.users.edit', ['user' => $user]) }}" type="button" class="btn btn-primary">Modifier</a>
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                            <button type="submit" class="btn btn-danger">Supprimer</button>
                                         </form>
                                     </td>
                                 </tr>
