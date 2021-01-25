@@ -24,10 +24,10 @@
                     </p>
                     <p class="card-text fs-5 fw-bold">Genre
                         
-                        <p class="text-primary">
+                        <span class="text-primary">
                             {{ $game->genre->name }}
                             {{ $game->genre->type }}
-                        </p>
+                        </span>
                    
                     </p>
 
