@@ -14,7 +14,7 @@ class CartController extends Controller
      */
     public function index()
     {
-        //
+        return view('carts.index');
     }
 
     /**
@@ -35,12 +35,9 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        // dd(, , );
-        // $cart = app(Cart::class);
-        // $cart->add();
         Cart::add($request->id, $request->name, 1, $request->price)
         ->associate('App\Game');
-        return redirect(route('games.index'));
+        return redirect(route('games.index'))->with('success', 'Le produit a bien ete ajoute');
     }
 
     /**

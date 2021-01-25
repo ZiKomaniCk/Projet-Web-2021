@@ -7,8 +7,14 @@
     <p class="text-white">Barre a faire</p>
 </div>
 
-<div class="container" style="background-color: #333333;">   
 
+
+<div class="container" style="background-color: #333333;">   
+    @if (session('success'))
+        <div class="alert alert-success ">
+            {{ session('success') }}
+        </div>
+    @endif 
     <div class="row justify-content-center ">
         @foreach ($games as $game)
             <div class="col-sm-4 p-4">
