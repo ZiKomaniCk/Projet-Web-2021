@@ -58,7 +58,7 @@
                                     {{ Auth::user()->name }}
                                 </a> --}}
                             
-                                <a class="btn btn-gray1e dropdown-toggle mt-3" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="btn btn-gray1e dropdown-toggle mt-2" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                                     {{Auth::user()->nickname}}
                                 </a>
                                 
@@ -67,7 +67,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('Se déconnecter') }}
                                     </a>
                                     
                                     <a class="dropdown-item" href="{{ route('home') }}">
@@ -76,11 +76,11 @@
 
                                     @can('manage-users')
                                         <a class="dropdown-item" href="{{ route('admin.users.index') }}">
-                                            User Managment
+                                            Gestions Utilisateurs
                                         </a>
                                         
                                         <a class="dropdown-item" href="{{ route('admin.games.index') }}">
-                                            Game Managment
+                                            Gestions Jeux
                                         </a>
 
                                         <a class="dropdown-item" href="">
@@ -105,7 +105,7 @@
                                 {{-- <a class="nav-link" href="{{ route('login') }}">{{ __('Connexion') }}</a> --}}
                                 <a href="{{ route('login') }}" class="nav-link text-white mt-3">Panier</a>
                             @else
-                                <a href="#" class="nav-link text-white mt-3">
+                                <a href="#" class="nav-link text-white mt-1 ml-4 fs-5">
                                     Panier <span class="badge badge-pill badge-dark">{{ Cart::count()}}</span>
 
                                 </a>

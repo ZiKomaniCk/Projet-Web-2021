@@ -17,7 +17,7 @@
                             {{ $game->platform }}
                         </span>
                     </p>
-                    <p class="card-text fs-5 fw-bold">Developpé par 
+                    <p class="card-text fs-5 mt-4 fw-bold">Developpé par 
                         <span class="text-primary">
                             {{ $game->company }}
                         </span>
