@@ -23,11 +23,12 @@
                         </span>
                     </p>
                     <p class="card-text fs-5 fw-bold">Genre
-                        @foreach ($game->genres as $genre)
+                        
                         <p class="text-primary">
-                            {{ $genre->name }}
+                            {{ $game->genre->name }}
+                            {{ $game->genre->type }}
                         </p>
-                    @endforeach
+                   
                     </p>
                     
                     <div class="row">

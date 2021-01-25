@@ -13,11 +13,6 @@ class GenreSeeder extends Seeder
      */
     public function run()
     {
-        $games = Game::all();
-        factory(Genre::class, 10)->create()->each(function ($genre) use ($games) {
-            $genre->games()->attach(
-                $games->random(1)->pluck('id')->toArray()
-            );
-        });
+        factory(Genre::class, 15)->create();
     }
 }

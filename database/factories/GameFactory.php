@@ -21,6 +21,7 @@ $factory->define(Game::class, function (Faker $faker) {
                                             'Square Enix', 'Devolver', 'Naughty Dog', 'CD PROJECT RED', 'FOCUS', 'Nintendo', 'SEGA', 'BUNGIE' ]),
         'pegi' => $faker->randomElement(['3' ,'7', '12', '16', '18']),
         'platform' => $faker->randomElement(['XBOX ONE', 'XBOX 360' ,'PC', 'Playsation 4', 'Playsation 3', 'Playsation 2',
-                                                'Playsation 1', 'Nintendo Switch', 'Nintendo Wii'])
+                                                'Playsation 1', 'Nintendo Switch', 'Nintendo Wii']),
+        
     ];
 });

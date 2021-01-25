@@ -18,7 +18,7 @@ class Game extends Model
         return $this->hasMany(Cart::class);
     }
 
-    public function genres() {
-        return $this->belongsToMany('App\Genre');
+    public function genre() {
+        return $this->belongsTo(Genre::class);
     }
 }
