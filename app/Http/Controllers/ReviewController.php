@@ -99,9 +99,9 @@ class ReviewController extends Controller
      * @param  \App\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Review $review)
+    public function destroy(Review $review, Request $request)
     {
         $review->delete();
-        return redirect(route('home'));
+        return redirect(route('games.show', ['game' => $request->game]));
     }
 }

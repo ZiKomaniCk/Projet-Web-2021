@@ -127,7 +127,7 @@
                                     <a href="{{ route('reviews.edit', ['review' => $review]) }}" class="btn btn-primary">Modifier</a>
                                 </div>
                                 <div class="col-6">
-                                    <form action="{{ route('reviews.destroy', ['review' => $review]) }}" method="POST" >
+                                    <form action="{{ route('reviews.destroy', ['review' => $review, 'game' => $game]) }}" method="POST" >
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Supprimer</button>
