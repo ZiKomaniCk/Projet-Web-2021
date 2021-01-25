@@ -4,8 +4,8 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Edit user {{ $user->name }}</div>
+            <div class="card border-primary">
+                <div class="card-header text-primary fs-3">Modifier utilisateur {{ $user->name }}</div>
                 
                 <div class="card-body">
                     <form action="{{ route('admin.users.update', $user) }}" method="POST" enctype="multipart/form-data">
@@ -50,7 +50,7 @@
                                 <input id="imgPath" type="file" class="form-control" name="imgPath"  >
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Update</button>
+                        <button type="submit" class="btn btn-primary" style="float: right;">Modifier</button>
                     </form>
                 </div>
             </div>
