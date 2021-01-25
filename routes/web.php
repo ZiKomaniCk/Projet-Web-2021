@@ -43,3 +43,6 @@ Route::resource("carts", "CartController");
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function(){
     Route::resource('/games', 'GameController', ['except' => ['show']]);
 });
+
+Route::get('/paiement', 'CheckoutController@index')->name('checkouts.index');
+Route::post('/paiement', 'CheckoutController@store')->name('checkouts.store');
