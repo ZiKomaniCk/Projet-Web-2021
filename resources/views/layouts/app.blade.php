@@ -100,12 +100,12 @@
                                 </div>
                             </li>
                         @endguest
-                        <li class="nav-item ">
+                        <li class="nav-item">
                             @guest
                                 {{-- <a class="nav-link" href="{{ route('login') }}">{{ __('Connexion') }}</a> --}}
                                 <a href="{{ route('login') }}" class="nav-link text-white mt-3">Panier</a>
                             @else
-                                <a href="#" class="nav-link text-white mt-1 ml-4 fs-5">
+                                <a href="#" class="nav-link text-white mt-1 ml-4 fs-5 bg-primary rounded-pill ">
                                     Panier <span class="badge badge-pill badge-dark">{{ Cart::count()}}</span>
 
                                 </a>

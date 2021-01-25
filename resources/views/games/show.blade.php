@@ -40,7 +40,7 @@
                                     <span class="text-primary fw-bold fs-2">
                                         Score
                                     </span>
-                                    <span class="fs-2 fw-bold rounded-circle pb-3 pt-4 pl-1 pr-1"style='background-color: #149e42'>
+                                    <span class="fs-2 fw-bold bg-primary rounded-circle p-3">
                                         {{ $game->score }}/20
                                     </span>
 
