@@ -9,51 +9,61 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
-                    
-                    <!-- Shopping cart table -->
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th scope="col" class="border-0 bg-light">
-                                        <div class="p-2 px-3 text-uppercase">Product</div>
+                                    <th scope="col" class="border-0 bg-dark">
+                                        <div class="p-2 px-3 text-uppercase text-white">Produit</div>
                                     </th>
-                                    <th scope="col" class="border-0 bg-light">
-                                        <div class="py-2 text-uppercase">Price</div>
+                                    <th scope="col" class="border-0 bg-dark">
+                                        <div class="py-2 text-uppercase text-white">Prix</div>
                                     </th>
-                                    <th scope="col" class="border-0 bg-light">
-                                        <div class="py-2 text-uppercase">Quantity</div>
+                                    <th scope="col" class="border-0 bg-dark">
+                                        <div class="py-2 text-uppercase text-white">Quantité</div>
                                     </th>
-                                    <th scope="col" class="border-0 bg-light">
-                                        <div class="py-2 text-uppercase">Remove</div>
+                                    <th scope="col" class="border-0 bg-dark">
+                                        <div class="py-2 text-uppercase "></div>
                                     </th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach (Cart::content() as $product)
-                                <div class="p-2">
-                                    <img src="" alt="">
-                                </div>
                                 
-                                <tr>
-                                    <th scope="row" class="border-0">
-                                        <div class="p-2">
+                                
+                                <tr class="">
+                                    <th scope="row" class="border-bottom-0 border-dark">
+                                        <div class="p-3">
                                             <img src="{{ $product->model->pathImage }}" alt="" width="70" class="img-fluid rounded shadow-sm">
                                             <div class="ml-3 d-inline-block align-middle">
                                                 <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">{{ $product->model->name }}</a></h5>
-                                                <span class="text-muted font-weight-normal font-italic d-block">Category: Watches</span>
+                                                <span class="text-muted font-weight-normal font-italic d-block">Category: </span>
                                             </div>
                                         </div>
                                     </th>
-                                    <td class="border-0 align-middle"><strong>{{ $product->model->price }}</strong></td>
-                                    <td class="border-0 align-middle"><strong>3</strong></td>
-                                    <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
+                                    <td class="border-bottom-0 border-dark align-middle"><strong>{{ $product->model->price }} €</strong></td>
+                                    <td class="border-bottom-0 border-dark align-middle"><strong>1</strong></td>
+                                    <td class="border-bottom-0 border-dark align-middle">
+                                        <form action="{{ route('carts.destroy') }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+
+
+                                            <button type="submit">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                                                </svg>
+                                            </button>
+                                        </form>
+                                        <a href="{{ route('carts.destroy', ['rowId' => $product->model->id]) }}" class="text-dark">
+                                            
+                                        </a>
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>
                         </table>
                     </div>
-                    <!-- End -->
                 </div>
             </div>
             
@@ -92,7 +102,12 @@
             </div>
             
         </div>
-    </div
+    </div>
+    @else
+    <div class="container text-white py-5 text-center">
+        <h4 class="display-5">Votre panier est vide</h4>
+        <p class="lead mb-0">Ajouter des jeux a votre panier <a href="{{ route('games.index') }}">liste des jeux</a></p>
+      </div>
     @endif
         
 @endsection
