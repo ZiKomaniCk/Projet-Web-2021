@@ -23,10 +23,13 @@
                         </span>
                     </p>
                     <p class="card-text fs-5 fw-bold">Genre
-                        <span class="text-primary">
-                            {{-- {{ $game->genre->name}} --}}
-                        </span>
+                        @foreach ($game->genres as $genre)
+                        <p class="text-primary">
+                            {{ $genre->name }}
+                        </p>
+                    @endforeach
                     </p>
+                    
                     <div class="row">
                         <div class="col-md-6 mt-5">
                             <p class="card-text"><small class="text-muted fs-6 fst-italic">Date de sortie : {{ $game->releaseDate }}</small></p>
