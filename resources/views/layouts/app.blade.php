@@ -40,14 +40,14 @@
                     </ul> --}}
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto fs-6">
                         <!-- Authentication Links -->
                         @guest
-                            <li class="nav-item mt-3">
+                            <li class="nav-item mt-2">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Connexion') }}</a>
                             </li>
                             @if (Route::has('register'))
-                                <li class="nav-item mt-3">
+                                <li class="nav-item mt-2">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __("S'enregistrer") }}</a>
                                 </li>
                             @endif
@@ -103,7 +103,7 @@
                         <li class="nav-item">
                             @guest
                                 {{-- <a class="nav-link" href="{{ route('login') }}">{{ __('Connexion') }}</a> --}}
-                                <a href="{{ route('login') }}" class="nav-link text-white mt-3">Panier</a>
+                                <a href="{{ route('login') }}" class="nav-link text-white mt-2 bg-primary rounded-pill">Panier</a>
                             @else
                                 <a href="{{ route('carts.index') }}" class="nav-link text-white mt-1 ml-4 fs-5 bg-primary rounded-pill ">
                                     Panier <span class="badge badge-pill badge-dark">{{ Cart::count()}}</span>
