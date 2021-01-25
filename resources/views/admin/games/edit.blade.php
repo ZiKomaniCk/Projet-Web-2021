@@ -8,7 +8,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card border-primary">
-                <div class="card-header fs-4 text-primary">{{ __('Modifier') }}</div>
+                <div class="card-header fs-4 fw-bold text-primary">{{ __('Modifier') }}</div>
 
                 <div class="card-body fs-6">
                     <form method="POST" action="{{ route('admin.games.update', ['game' => $game]) }}" enctype="multipart/form-data">

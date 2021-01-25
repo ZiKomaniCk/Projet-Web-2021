@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Game::class, function (Faker $faker) {
     return [
-        'name' => $faker->name,
+        'name' => $faker->company,
         'price' => $faker->numberBetween($min = 30, $max = 70),
         'score' => $faker->numberBetween($min = 0, $max = 20),
         'quantity' => $faker->numberBetween($min = 10, $max = 50),

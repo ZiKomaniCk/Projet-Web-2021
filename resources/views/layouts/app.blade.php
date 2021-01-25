@@ -47,8 +47,8 @@
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Connexion') }}</a>
                             </li>
                             @if (Route::has('register'))
-                                <li class="nav-item mt-2">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __("S'enregistrer") }}</a>
+                                <li class="nav-item mt-2 text-white">
+                                    <a class="nav-link text-white" href="{{ route('register') }}">{{ __("S'enregistrer") }}</a>
                                 </li>
                             @endif
                         @else

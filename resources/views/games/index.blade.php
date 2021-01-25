@@ -19,7 +19,7 @@
         @foreach ($games as $game)
             <div class="col-sm-4 p-4">
                 <div class="card rounded-2 shadow" style="width: 18rem;">
-                    <img src="{{$game->pathImage}}" class="card-img-top" alt="...">
+                    <img src="{{$game->pathImage}}" class="card-img-top" style="width: 286px; height: 413px;" alt="image du jeu">
                     <div class="card-body" style="background-color: #1e1e1e">
                         <h5 class="card-title text-primary fs-4 fw-bold" style="text-shadow: -2px 2px  #183518;">{{$game->name}}</h5>
                         <div class="row justify-content-center mb-3">
