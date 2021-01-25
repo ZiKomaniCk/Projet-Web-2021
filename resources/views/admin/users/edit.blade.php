@@ -7,7 +7,7 @@
             <div class="card border-primary">
                 <div class="card-header text-primary fs-3">Modifier utilisateur {{ $user->name }}</div>
                 
-                <div class="card-body">
+                <div class="card-body fs-6">
                     <form action="{{ route('admin.users.update', $user) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
@@ -50,7 +50,7 @@
                                 <input id="imgPath" type="file" class="form-control" name="imgPath"  >
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary" style="float: right;">Modifier</button>
+                        <button type="submit" class="btn btn-primary float-right fs-5">Modifier</button>
                     </form>
                 </div>
             </div>
