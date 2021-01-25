@@ -13,7 +13,7 @@
         </div>
     </div>
 
-<div class="form-group row">
+<div class="form-group row fs-6">
     <label for="firstName" class="col-md-4 col-form-label text-md-right">{{ __('Prénom') }}</label>
     
     <div class="col-md-6">
@@ -28,7 +28,7 @@
 </div>
 
 
-<div class="form-group row">
+<div class="form-group row fs-6">
     <label for="nickname" class="col-md-4 col-form-label text-md-right">{{ __('Pseudo') }}</label>
     
     <div class="col-md-6">
@@ -42,7 +42,7 @@
     </div>
 </div>
 
-<div class="form-group row">
+<div class="form-group row fs-6">
     <label for="credit" class="col-md-4 col-form-label text-md-right">{{ __('Solde') }}</label>
     
     <div class="col-md-6">
@@ -56,7 +56,7 @@
     </div>
 </div>
 
-<div class="form-group row">
+<div class="form-group row fs-6">
     <label for="birthDate" class="col-md-4 col-form-label text-md-right">{{ __("Date d'anniversaire") }}</label>
     
     <div class="col-md-6">
@@ -70,7 +70,7 @@
     </div>
 </div>
 
-<div class="form-group row">
+<div class="form-group row fs-6">
     <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Addresse E-Mail ') }}</label>
     
     <div class="col-md-6">
@@ -85,7 +85,7 @@
 </div>
 
 @if ($routeName == 'register')
-<div class="form-group row">
+<div class="form-group row fs-6">
     <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Mot de passe') }}</label>
     
     <div class="col-md-6">
@@ -99,10 +99,10 @@
     </div>
 </div>
 
-<div class="form-group row">
+<div class="form-group row fs-6">
     <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirmer le mot de passe') }}</label>
     
-    <div class="col-md-6">
+    <div class="col-md-6 fs-6">
         <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
     </div>
 </div>
