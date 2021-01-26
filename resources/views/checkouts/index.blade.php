@@ -69,13 +69,14 @@
     var submitButton = document.getElementById('submit');
     submitButton.addEventListener('click', function(ev) {
         ev.preventDefault();
+        submitButton.disabled = true;
         stripe.confirmCardPayment("{{ $clientSecret }}", {
             payment_method: {
                 card: card
             }
         }).then(function(result) {
             if (result.error) {
-                submitButton.disabled = true;
+                submitButton.disabled = false;
                 console.log(result.error.message);
             } else {
                 // The payment has been processed!
