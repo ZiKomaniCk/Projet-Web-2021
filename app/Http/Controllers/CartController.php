@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Game;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Session;
@@ -16,6 +17,7 @@ class CartController extends Controller
      */
     public function index()
     {
+        // $games = ;
         return view('carts.index');
     }
 

@@ -13,7 +13,7 @@
           <div class="card-body rounded-2">
             <h5 class="card-title fs-1 fw-bold text-primary" style="text-shadow: -2px 2px  #1e1e1e;">{{$user->nickname}}</h5>
             <hr>
-            <h5 class="text-end fs-3" style="margin-bottom">Crédits: {{$user->credit}}</h5>
+            <h5 class="text-end fs-3" style="margin-bottom">Crédits: {{$user->credit}} €</h5>
           </div>
         </div>
       </div>
@@ -52,7 +52,7 @@
                   <p class="card-text fs-6 fw-light">{{$game->company}}</p>
                 </div>
                 <div class="col-4">
-                  <p class="card-text fs-5 fw-bold">{{$game->price}}€</p>
+                  <p class="card-text fs-6 fw-bold">x{{$game->qty}}</p>
                 </div>
               </div>
               <a href="{{ route('games.show', ['game' => $game]) }}" class="btn btn-primary text-white">Voir plus</a>

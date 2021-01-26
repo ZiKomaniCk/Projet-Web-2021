@@ -53,7 +53,7 @@
                                         <div class="p-3">
                                             <img src="{{ $product->model->pathImage }}" alt="" width="70" class="img-fluid rounded shadow-sm">
                                             <div class="ml-3 d-inline-block align-middle">
-                                                <h5 class="mb-0"> <a href="#" class="text-white fs-5 d-inline-block align-middle">{{ $product->model->name }}</a></h5>
+                                                <h5 class="mb-0"> <a href="{{ route('games.show', ['game' => $product->model]) }}" class="text-white fs-5 d-inline-block align-middle">{{ $product->model->name }}</a></h5>
                                             </div>
                                         </div>
                                     </th>
@@ -61,7 +61,10 @@
                                     <td class="border-bottom-0 border-primary align-middle">
                                         <select name="qty" id="qty" data-id="{{ $product->rowId }}" class="custom-select">
                                             @for ($i = 1; $i <= 6; $i++)
-                                                <option value='{{ $i }}' {{ $i == $product->qty ? 'selected' : '' }}>{{ $i }}</option>
+                                                @if ($product->model->quantity>= $i)
+                                                    
+                                                    <option value='{{ $i }}' {{ $i == $product->qty ? 'selected' : '' }}>{{ $i }}</option>
+                                                @endif
                                             @endfor
                                         </select>
                                     </td>
@@ -121,7 +124,6 @@
 @section('extra-js')
     <script>
         let selects = document.querySelectorAll('#qty');
-        console.log(selects);
         Array.from(selects).forEach((element) =>{
             element.addEventListener('change', function () {
                 let rowId = this.getAttribute('data-id');
@@ -142,7 +144,7 @@
                         })
                     }
                 ).then((data) => {
-                    console.log(data);
+                    // console.log(data);
                     location.reload();
                 }).catch((error) => {
                     console.log(error);

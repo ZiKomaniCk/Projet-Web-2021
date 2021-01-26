@@ -11,7 +11,7 @@
             </div> --}}
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-                <button type="button" class="btn btn-primary text-white">Payer</button>
+                
                 <form method="POST" action="{{ route('carts.store', ['id' => $game->id, 'name' =>$game->name, 'price' => $game->price]) }}">
                     @csrf
                     <button type="submit" class="btn btn-primary text-white">Ajouter au pannier</button>
