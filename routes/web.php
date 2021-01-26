@@ -48,5 +48,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:mana
 Route::get('/paiement', 'CheckoutController@index')->name('checkouts.index');
 Route::post('/paiement', 'CheckoutController@store')->name('checkouts.store');
 
+Route::post('/paiement/solde', 'CheckoutController@storeSolde')->name('checkouts.storeSolde');
+
 
 Route::get('/merci', 'CheckoutController@thanks')->name('checkouts.thanks');
