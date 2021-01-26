@@ -41,7 +41,7 @@
     
     <div class="col-sm-8 ">
       <div class="row">
-        @foreach ($user->games as $game)
+        @foreach ($games as $game)
         <div class="col-sm-4">
           <div class="card " style="width: 15rem;">
             <img src="{{$game->pathImage}}" class="card-img-top" alt="...">

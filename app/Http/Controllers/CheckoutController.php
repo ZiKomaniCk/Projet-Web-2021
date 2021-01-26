@@ -75,9 +75,10 @@ class CheckoutController extends Controller
         $i = 0;
 
         foreach(Cart::content() as $product){
-            $products['game_' . $i][] = $product->model->title;
+            $products['game_' . $i][] = $product->model->name;
             $products['game_' . $i][] = $product->model->price;
-            $products['game_' . $i][] = $product->quantity;
+            $products['game_' . $i][] = $product->qty;
+            $products['game_' . $i][] = $product->model->id;
             $i++;
         }
 
