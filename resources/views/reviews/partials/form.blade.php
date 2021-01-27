@@ -2,7 +2,7 @@
     <label for="rate" class="col-md-4 col-form-label text-md-right">{{ __('Note') }}</label>
 
     <div class="col-md-6">
-        <input id="rate" type="number" step="0.1" class="form-control @error('rate') is-invalid @enderror" name="rate" placeholder="2.5" value="{{ $review->rate ?? '' }}" required autocomplete="rate" autofocus>
+        <input id="rate" type="number" step="0.1" min="0" max="5" class="form-control @error('rate') is-invalid @enderror" name="rate" placeholder="2.5" value="{{ $review->rate ?? '' }}" required autocomplete="rate" autofocus>
 
         @error('rate')
             <span class="invalid-feedback" role="alert">
