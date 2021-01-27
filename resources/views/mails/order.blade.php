@@ -223,7 +223,7 @@
           <![endif]-->
                                 <div style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:22px;font-weight:bold;line-height:1;text-align:left;color:#149e42;">{{$game[0]}}</div>
                                 <!--[if mso | IE]>
-            </td>
+            </td> 
           
             <td
                align="left" class="" style=""
