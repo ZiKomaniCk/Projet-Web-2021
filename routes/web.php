@@ -60,5 +60,5 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:mana
 });
 
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function(){
-    Route::resource('/orders', 'OrderController', ['except' => ['create', 'store', 'update', 'edit', 'destroy']]);
+    Route::resource('/orders', 'OrderController', ['except' => ['show', 'create', 'store', 'update', 'edit', 'destroy']]);
 });
