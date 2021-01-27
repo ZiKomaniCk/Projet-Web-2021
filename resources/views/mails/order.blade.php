@@ -220,6 +220,14 @@
                align="left" class="" style=""
             >
           <![endif]-->
+                                <div style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:17px;font-weight:bold;line-height:1;text-align:left;color:#8f8f8f;">{{$gamePlatform}}</div>
+                                <!--[if mso | IE]>
+            </td>
+          
+            <td
+               align="left" class="" style=""
+            >
+          <![endif]-->
                                 <div style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:22px;font-weight:bold;line-height:1;text-align:left;color:#149e42;">{{$gameName}}</div>
                                 <!--[if mso | IE]>
             </td>
