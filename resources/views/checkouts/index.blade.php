@@ -13,7 +13,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card border-primary">
-                <div class="card-header fs-4 fw-bold text-primary">{{ __('Page de paiement') }}</div>
+                <div class="card-header fs-4 fw-bold text-primary">{{ __('Paiement avec Carte Bleu') }}</div>
                 
                 <form action="{{ route('checkouts.store') }}" method="POST" id="payment-form" class="m-5">
                     @csrf
@@ -27,6 +27,30 @@
                     
                     <button class="btn btn-success mt-3 mr-3 fs-5 float-right" id="submit">Procéder au paiement</button>
                 </form>
+                
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-8 mt-5">
+            <div class="card border-primary">
+                <div class="card-header fs-4 fw-bold text-primary">{{ __('Paiement avec votre Solde') }}</div>
+                <div class="card-body">
+                    <p class="card-text fs-4 ml-3">Prix à payer : {{ Cart::total() }} €</p>
+                    <p class="card-text fs-4 ml-3">Votre Solde : {{ Auth::user()->credit }} €</p>
+                        
+                
+                @if (Auth::user()->credit >= Cart::total())
+                    </div>
+                    <form action="{{ route('checkouts.storeSolde') }}" method="POST"  class="m-5">
+                        @csrf
+                        <button class="btn btn-success mt-3 mr-3 fs-5 float-right" id="submit">Procéder au paiement</button>
+                    </form>
+                @else
+                    <p class="card-text fs-4 ml-3">Vous n'avez pas les fond necessaire, cliquer <a href="{{ route('admin.users.edit', ['user' => Auth::user()]) }}">ici</a></p>
+                    </div>
+                @endif
+                
                 
             </div>
         </div>
@@ -69,13 +93,14 @@
     var submitButton = document.getElementById('submit');
     submitButton.addEventListener('click', function(ev) {
         ev.preventDefault();
+        submitButton.disabled = true;
         stripe.confirmCardPayment("{{ $clientSecret }}", {
             payment_method: {
                 card: card
             }
         }).then(function(result) {
             if (result.error) {
-                submitButton.disabled = true;
+                submitButton.disabled = false;
                 console.log(result.error.message);
             } else {
                 // The payment has been processed!

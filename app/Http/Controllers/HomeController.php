@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Game;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,6 +26,14 @@ class HomeController extends Controller
     public function index()
     {
         $user = Auth::user();
-        return view('home', ['user' => $user]);
+        $games = array();
+        foreach($user->orders as $order){
+            foreach(unserialize($order->products) as $product){
+                $game = Game::find($product[3]);
+                $game->qty = $product[2];
+                $games[] = $game;
+            }
+        }
+        return view('home', ['user' => $user, 'games' => $games]);
     }
 }

@@ -2,10 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Game;
+use App\Order;
+use App\User;
+use DateTime;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use Stripe\Stripe;
 use Stripe\PaymentIntent;
 
@@ -16,12 +21,10 @@ class CheckoutController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         if(Cart::count() > 0 && Auth::user())
         {
-
-        
             Stripe::setApiKey('sk_test_51IDUonGO87gMjJ4fxBhklnBGUEYbnaH4cEOKYYr6RhcOi5r3qGuOvApyVGGsBoj6BzEeP4AuLrQ9SVEcLsj0IcU800iv6x0hez');
 
             $intent = PaymentIntent::create([
@@ -55,9 +58,111 @@ class CheckoutController extends Controller
      */
     public function store(Request $request)
     {
-        Cart::destroy();
         $data = $request->json()->all();
-        return $data['paymentIntent'];
+
+        $newAmount = $data['paymentIntent']['amount'] *10;
+        $order = new Order();
+
+        $order->payment_intent_id = $data['paymentIntent']['id'];
+        $order->amount = $newAmount;
+
+        $order->payment_created_at = (new DateTime())
+            ->setTimestamp($data['paymentIntent']['created'])
+            ->format('Y-m-d H:i:s');
+
+        $products = [];
+
+        $i = 0;
+
+        foreach(Cart::content() as $product){
+            $products['game_' . $i][] = $product->model->name;
+            $products['game_' . $i][] = $product->model->price;
+            $products['game_' . $i][] = $product->qty;
+            $products['game_' . $i][] = $product->model->id;
+
+            $game = Game::find($product->model->id);
+            if( ($product->qty <= $game->quantity) )
+            {
+                $game->quantity = $game->quantity - $product->qty;
+                if($game->quantity == 0){
+                    $game->visible = 0;
+                }
+                $game->save();
+                // ($product->qty - $game->quantity)
+            }else{
+                Session::flash('danger', 'Votre commande a été interrompu, il ne reste plus assez de jeux.');
+                return( response()->json(['error' => 'Payment Intent Not Succeeded']));
+            }
+
+            $i++;
+        }
+
+        $order->products = serialize($products);
+        $order->user_id = Auth::user()->id;
+        $order->save();
+
+        if($data['paymentIntent']['status'] == 'succeeded'){
+            Cart::destroy();
+            Session::flash('success', 'Votre commande a été traitée avec succès.');
+            return( response()->json(['success' => 'Payment Intent Succeeded']));
+        }else{
+            return( response()->json(['error' => 'Payment Intent Not Succeeded']));
+        }
+    }
+
+    public function thanks()
+    {
+        return Session::has('success') ? view('checkouts.thanks') : redirect(route('games.index'));
+    }
+
+    public function storeSolde(Request $request)
+    {
+        $order = new Order();
+        // dd(getPriceSolde(Cart::total()));
+        $order->amount = getPriceSolde(Cart::total());
+        $order->payment_created_at = date('Y-m-d H:i:s');
+
+
+        $products = [];
+
+        $i = 0;
+
+        foreach(Cart::content() as $product){
+            $products['game_' . $i][] = $product->model->name;
+            $products['game_' . $i][] = $product->model->price;
+            $products['game_' . $i][] = $product->qty;
+            $products['game_' . $i][] = $product->model->id;
+
+            $game = Game::find($product->model->id);
+            if( ($product->qty <= $game->quantity) )
+            {
+                $game->quantity = $game->quantity - $product->qty;
+                if($game->quantity == 0){
+                    $game->visible = 0;
+                }
+                $game->save();
+                // ($product->qty - $game->quantity)
+            }else{
+                Session::flash('danger', 'Votre commande a été interrompu, il ne reste plus assez de jeux.');
+                return( response()->json(['error' => 'Payment Intent Not Succeeded']));
+            }
+
+            $i++;
+        }
+
+        $order->products = serialize($products);
+        $order->user_id = Auth::user()->id;
+        $order->save();
+
+        $user = User::find(Auth::user()->id);
+        $user->credit = $user->credit - doubleval(str_replace(",", ".", Cart::total()));
+        $user->save();
+
+        Cart::destroy();
+        Session::flash('success', 'Votre commande a été traitée avec succès.');
+
+        return redirect(route('checkouts.thanks'));
+
     }
 
     /**

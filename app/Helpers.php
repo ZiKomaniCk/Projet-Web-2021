@@ -15,3 +15,9 @@ function getPriceIntent($price){
     $price = floatval(str_replace(",", "", $price));
     return $price;
 }
+
+function getPriceSolde($price){
+    // dd($price);
+    $price = intval(str_replace(",", "", $price));
+    return ($price * 10);
+}

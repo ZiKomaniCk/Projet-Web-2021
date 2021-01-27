@@ -1,14 +1,24 @@
 @extends('layouts.app')
 
+@section('extra-meta')
+<meta name="csrf-token" content="{{ csrf_token() }}">
+@endsection
 
 @section('content')
-@if (session('success'))
-<div class="container">
-    <div class="alert alert-success ">
-        {{ session('success') }}
-    </div>
-</div>
-@endif 
+    @if (session('success'))
+        <div class="container">
+            <div class="alert alert-success ">
+                {{ session('success') }}
+            </div>
+        </div>
+    @endif 
+    @if (session('danger'))
+        <div class="container">
+            <div class="alert alert-danger ">
+                {{ session('danger') }}
+            </div>
+        </div>
+    @endif 
 @if (Cart::count() > 0)
 
 <div class="px-4 px-lg-0">
@@ -43,13 +53,21 @@
                                         <div class="p-3">
                                             <img src="{{ $product->model->pathImage }}" alt="" width="70" class="img-fluid rounded shadow-sm">
                                             <div class="ml-3 d-inline-block align-middle">
-                                                <h5 class="mb-0"> <a href="#" class="text-white fs-5 d-inline-block align-middle">{{ $product->model->name }}</a></h5>
-                                                <span class="text-muted font-weight-normal font-italic d-block">Categorie: {{ $product->model->type }} </span>
+                                                <h5 class="mb-0"> <a href="{{ route('games.show', ['game' => $product->model]) }}" class="text-white fs-5 d-inline-block align-middle">{{ $product->model->name }}</a></h5>
                                             </div>
                                         </div>
                                     </th>
-                                    <td class="border-bottom-0 border-primary align-middle"><strong>{{ $product->model->price }} €</strong></td>
-                                    <td class="border-bottom-0 border-primary align-middle"><strong>1</strong></td>
+                                    <td class="border-bottom-0 border-primary align-middle"><strong>{{ $product->subtotal() }} €</strong></td>
+                                    <td class="border-bottom-0 border-primary align-middle">
+                                        <select name="qty" id="qty" data-id="{{ $product->rowId }}" class="custom-select">
+                                            @for ($i = 1; $i <= 6; $i++)
+                                                @if ($product->model->quantity>= $i)
+                                                    
+                                                    <option value='{{ $i }}' {{ $i == $product->qty ? 'selected' : '' }}>{{ $i }}</option>
+                                                @endif
+                                            @endfor
+                                        </select>
+                                    </td>
                                     <td class="border-bottom-0 border-primary align-middle">
                                         <form action="{{ route('carts.destroy',  $product->rowId) }}" method="POST">
                                             @csrf
@@ -62,7 +80,6 @@
                                             </button>
                                         </form>
                                             
-                                        </a>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -101,4 +118,38 @@
       </div>
     @endif
         
+@endsection
+
+
+@section('extra-js')
+    <script>
+        let selects = document.querySelectorAll('#qty');
+        Array.from(selects).forEach((element) =>{
+            element.addEventListener('change', function () {
+                let rowId = this.getAttribute('data-id');
+                let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+                fetch(
+                    `/carts/${rowId}`,
+                    {
+                        headers: {
+                            "Content-Type": "application/json",
+                            "Accept": "application/json, text-plain, */*",
+                            "X-Requested-With": "XMLHttpRequest",
+                            "X-CSRF-TOKEN": token
+                        },
+                        method: 'patch',
+                        body: JSON.stringify({
+                            qty: this.value,
+                        })
+                    }
+                ).then((data) => {
+                    // console.log(data);
+                    location.reload();
+                }).catch((error) => {
+                    console.log(error);
+                })
+            })
+        })
+    </script>
 @endsection

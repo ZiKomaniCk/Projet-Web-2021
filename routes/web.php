@@ -39,6 +39,7 @@ Route::resource("games", "GameController", ['except' => ['create', 'store', 'upd
 Route::resource("reviews", "ReviewController", ['except' => ['index']]);
 
 Route::resource("carts", "CartController");
+Route::patch('/carts/{rowId}', 'CartController@update')->name('carts.update');
 
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function(){
     Route::resource('/games', 'GameController', ['except' => ['show']]);
@@ -47,6 +48,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:mana
 Route::get('/paiement', 'CheckoutController@index')->name('checkouts.index');
 Route::post('/paiement', 'CheckoutController@store')->name('checkouts.store');
 
-Route::get('/merci', function () {
-    return view('checkouts.thanks');
-});
+Route::post('/paiement/solde', 'CheckoutController@storeSolde')->name('checkouts.storeSolde');
+
+
+Route::get('/merci', 'CheckoutController@thanks')->name('checkouts.thanks');
