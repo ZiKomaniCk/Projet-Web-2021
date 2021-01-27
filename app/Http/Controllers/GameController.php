@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Game;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -35,7 +36,8 @@ class GameController extends Controller
      */
     public function show(Game $game)
     {
-        if($game->visible == 1){
+        $user = User::find(Auth::user()->id);
+        if($game->visible == 1 || $user->hasRole('admin')){
             return view('games.show', ['game' => $game]);
         }else{
             return redirect(route('games.index'));
