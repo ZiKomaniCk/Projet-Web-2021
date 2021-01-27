@@ -55,3 +55,10 @@ Route::get('/merci', 'CheckoutController@thanks')->name('checkouts.thanks');
 
 Route::get('/pdf', 'InvoiceController@show')->name('pdf.show');
 
+Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function(){
+    Route::resource('/dashboards', 'DashboardController', ['except' => ['show', 'create', 'store', 'update', 'edit', 'destroy']]);
+});
+
+Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function(){
+    Route::resource('/orders', 'OrderController', ['except' => ['show', 'create', 'store', 'update', 'edit', 'destroy']]);
+});
