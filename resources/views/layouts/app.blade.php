@@ -96,7 +96,11 @@
                                             Gestions Jeux
                                         </a>
 
-                                        <a class="dropdown-item" href="">
+                                        <a class="dropdown-item" href="{{ route('admin.orders.index') }}">
+                                            Achats
+                                        </a>
+
+                                        <a class="dropdown-item" href="{{ route('admin.dashboards.index') }}">
                                             Tableau de bord
                                         </a>
                                     @endcan
