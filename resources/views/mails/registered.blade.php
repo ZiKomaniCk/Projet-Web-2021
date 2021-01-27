@@ -208,7 +208,7 @@
                   </tr>
                   <tr>
                     <td align="left" style="font-size:0px;padding:10px 25px;padding-right:25px;padding-left:25px;word-break:break-word;">
-                      <div style="font-family:open Sans Helvetica, Arial, sans-serif;font-size:15px;line-height:1;text-align:left;color:#ffffff;">Merci, <br /> <br /> La {{$companyName}}</div>
+                      <div style="font-family:open Sans Helvetica, Arial, sans-serif;font-size:15px;line-height:1;text-align:left;color:#ffffff;">Merci, <br /> <br /> La {{$companyName}} Team</div>
                     </td>
                   </tr>
                 </table>
