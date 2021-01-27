@@ -54,3 +54,4 @@ Route::post('/paiement/solde', 'CheckoutController@storeSolde')->name('checkouts
 Route::get('/merci', 'CheckoutController@thanks')->name('checkouts.thanks');
 
 Route::get('/pdf', 'InvoiceController@show')->name('pdf.show');
+

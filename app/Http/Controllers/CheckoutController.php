@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Game;
+use App\Mail\Order as MailOrder;
 use App\Order;
 use App\User;
 use DateTime;
@@ -10,6 +11,7 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Stripe\Stripe;
 use Stripe\PaymentIntent;
@@ -104,6 +106,15 @@ class CheckoutController extends Controller
         if($data['paymentIntent']['status'] == 'succeeded'){
             Cart::destroy();
             Session::flash('success', 'Votre commande a été traitée avec succès.');
+
+            Mail::to(Auth::user()->email)
+                ->send(new MailOrder([
+                    'firstName' => Auth::user()->firstName, 
+                    'lastName' => Auth::user()->lastName,
+                    'emailCompany' => 'contactEkip@ceqonveut.com',
+                    'email' => Auth::user()->email,
+                    'companyName' => 'Gamingue']));
+
             return( response()->json(['success' => 'Payment Intent Succeeded']));
         }else{
             return( response()->json(['error' => 'Payment Intent Not Succeeded']));
@@ -158,6 +169,14 @@ class CheckoutController extends Controller
 
         Cart::destroy();
         Session::flash('success', 'Votre commande a été traitée avec succès.');
+
+        Mail::to(Auth::user()->email)
+            ->send(new MailOrder([
+                'firstName' => Auth::user()->firstName, 
+                'lastName' => Auth::user()->lastName,
+                'emailCompany' => 'contactEkip@ceqonveut.com',
+                'email' => Auth::user()->email,
+                'companyName' => 'Gamingue']));
 
         return redirect(route('checkouts.thanks'));
 

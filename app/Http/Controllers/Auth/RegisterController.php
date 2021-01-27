@@ -3,11 +3,14 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Mail\Registered;
 use App\Providers\RouteServiceProvider;
 use App\Role;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
@@ -83,6 +86,14 @@ class RegisterController extends Controller
         $role = Role::select('id')->where('name', 'user')->first();
 
         $user->roles()->attach($role);
+        Mail::to($user->email)
+            ->send(new Registered([
+                'firstName' => $user->firstName, 
+                'lastName' => $user->lastName,
+                'emailCompany' => 'contactEkip@ceqonveut.com',
+                'email' => $user->email,
+                'companyName' => 'Gamingue']));
+
         return $user;
     }
 }
