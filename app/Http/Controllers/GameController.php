@@ -35,7 +35,11 @@ class GameController extends Controller
      */
     public function show(Game $game)
     {
-        return view('games.show', ['game' => $game]);
+        if($game->visible == 1){
+            return view('games.show', ['game' => $game]);
+        }else{
+            return redirect(route('games.index'));
+        }
     }
 
 }
