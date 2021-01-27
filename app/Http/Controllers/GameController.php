@@ -25,12 +25,19 @@ class GameController extends Controller
     public function index(Request $request)
     {
         $games = Game::where('visible', '=', 1)->paginate(6);
-        $search = $request->search;
-        if(!(empty($search))){
-            $games = Game::where('name', 'like', '%' . $search . '%')
-                ->where('visible', '=', 1)
-                ->where('platform', '=', $request->platform)
-                ->paginate(6);
+        $platform = $request->platform;
+        if(!(empty($platform))){
+            if(!empty($request->search)){
+                $games = Game::where('name', 'like', '%' . $request->search . '%')
+                    ->where('visible', '=', 1)
+                    ->where('platform', '=', $request->platform)
+                    ->paginate(6);
+            }else{
+                $games = Game::where('visible', '=', 1)
+                    ->where('platform', '=', $request->platform)
+                    ->paginate(6);
+            }
+            
         }
 
         return view('games.index', ['games' => $games]);
