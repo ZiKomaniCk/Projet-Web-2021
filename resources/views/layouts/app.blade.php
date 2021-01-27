@@ -46,6 +46,11 @@
                     {{-- <ul class="navbar-nav mr-auto">
 
                     </ul> --}}
+                    {{-- <div style="flex: 1"  class="pl-5 pr-5">
+                        <input class="form-control " placeholder="Nom du jeux" type="text" name="search"  >
+                    </div> --}}
+
+                    
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto fs-6">

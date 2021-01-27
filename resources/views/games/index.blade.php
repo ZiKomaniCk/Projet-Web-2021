@@ -3,10 +3,25 @@
 
 @section('content')
 
-<div class="container" style="background-color: #333333">
-    <p class="text-white">Barre a faire</p>
+<div class="container mb-2" >
+    <form class="d-flex" >
+        <input class="form-control me-2" name='search' type="search" placeholder="Search"  aria-label="Search">
+        <select class="form-select mr-2" name="platform" >
+            <option selected value="XBOX">XBOX</option>
+            <option value="XBOX 360">XBOX 360</option>
+            <option value="XBOX ONE">XBOX ONE</option>
+            <option value="Playsation 1">Playsation 1</option>
+            <option value="Playsation 2">Playsation 2</option>
+            <option value="Playsation 3">Playsation 3</option>
+            <option value="Playsation 4">Playsation 4</option>
+            <option value="Nintendo Switch">Nintendo Switch</option>
+            <option value="Nintendo Wii">Nintendo Wii</option>
+            <option value="PC">PC</option>
+        </select>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
 </div>
-
+{{-- {{  }} --}}
 
 
 <div class="container" style="background-color: #333333;">   
