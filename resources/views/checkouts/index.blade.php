@@ -36,8 +36,8 @@
             <div class="card border-primary">
                 <div class="card-header fs-4 fw-bold text-primary">{{ __('Paiement avec votre Solde') }}</div>
                 <div class="card-body">
-                    <p class="card-text fs-4 ml-3">Prix à payer : {{ Cart::total() }} €</p>
-                    <p class="card-text fs-4 ml-3">Votre Solde : {{ Auth::user()->credit }} €</p>
+                    <p class="card-text fs-4 ml-3">Prix à payer : {{ Cart::total() }}€</p> <hr>
+                    <p class="card-text fs-3 mt-2 ml-3">Votre Solde : {{ Auth::user()->credit }}€</p>
                         
                 
                 @if (Auth::user()->credit >= Cart::total())
