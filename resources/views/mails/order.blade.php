@@ -209,6 +209,7 @@
                       <div style="background:#333333;background-color:#333333;margin:0px auto;max-width:600px;">
                         <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#333333;background-color:#333333;width:100%;">
                           <tbody>
+                            @foreach ($games as $game)
                             <tr>
                               <td style="direction:ltr;font-size:0px;padding:20px 0;padding-left:20px;text-align:center;">
                                 <!--[if mso | IE]>
@@ -220,7 +221,7 @@
                align="left" class="" style=""
             >
           <![endif]-->
-                                <div style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:22px;font-weight:bold;line-height:1;text-align:left;color:#149e42;">{{$gameName}}</div>
+                                <div style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:22px;font-weight:bold;line-height:1;text-align:left;color:#149e42;">{{$game[0]}}</div>
                                 <!--[if mso | IE]>
             </td>
           
@@ -228,7 +229,7 @@
                align="left" class="" style=""
             >
           <![endif]-->
-                                <div style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:27px;font-weight:bold;line-height:1;text-align:left;color:#149e42;">-> {{$gameKey}}</div>
+                                <div style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:27px;font-weight:bold;line-height:1;text-align:left;color:#149e42;">-> {{$game[1]}}</div>
                                 <!--[if mso | IE]>
             </td>
           
@@ -238,6 +239,7 @@
                 <![endif]-->
                               </td>
                             </tr>
+                            @endforeach
                           </tbody>
                         </table>
                       </div>

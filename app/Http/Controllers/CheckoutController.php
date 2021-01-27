@@ -76,6 +76,8 @@ class CheckoutController extends Controller
 
         $i = 0;
 
+        $games = [];
+
         foreach(Cart::content() as $product){
             $products['game_' . $i][] = $product->model->name;
             $products['game_' . $i][] = $product->model->price;
@@ -90,12 +92,12 @@ class CheckoutController extends Controller
                     $game->visible = 0;
                 }
                 $game->save();
-                // ($product->qty - $game->quantity)
             }else{
                 Session::flash('danger', 'Votre commande a été interrompu, il ne reste plus assez de jeux.');
                 return( response()->json(['error' => 'Payment Intent Not Succeeded']));
             }
-
+            $games[$i][] = $game->name; 
+            $games[$i][] = $game->activationCode; 
             $i++;
         }
 
@@ -106,13 +108,13 @@ class CheckoutController extends Controller
         if($data['paymentIntent']['status'] == 'succeeded'){
             Cart::destroy();
             Session::flash('success', 'Votre commande a été traitée avec succès.');
-
+            
             Mail::to(Auth::user()->email)
                 ->send(new MailOrder([
                     'firstName' => Auth::user()->firstName, 
-                    'lastName' => Auth::user()->lastName,
+                    'gamePrice' => (floatval($newAmount) / 1000),
                     'emailCompany' => 'contactEkip@ceqonveut.com',
-                    'email' => Auth::user()->email,
+                    'games' => $games,
                     'companyName' => 'Gamingue']));
 
             return( response()->json(['success' => 'Payment Intent Succeeded']));
@@ -134,6 +136,7 @@ class CheckoutController extends Controller
 
 
         $products = [];
+        $games = [];
 
         $i = 0;
 
@@ -155,7 +158,8 @@ class CheckoutController extends Controller
                 Session::flash('danger', 'Votre commande a été interrompu, il ne reste plus assez de jeux.');
                 return( response()->json(['error' => 'Payment Intent Not Succeeded']));
             }
-
+            $games[$i][] = $game->name; 
+            $games[$i][] = $game->activationCode; 
             $i++;
         }
 
@@ -173,9 +177,9 @@ class CheckoutController extends Controller
         Mail::to(Auth::user()->email)
             ->send(new MailOrder([
                 'firstName' => Auth::user()->firstName, 
-                'lastName' => Auth::user()->lastName,
+                'gamePrice' => (floatval($order->amount) / 1000),
                 'emailCompany' => 'contactEkip@ceqonveut.com',
-                'email' => Auth::user()->email,
+                'games' => $games,
                 'companyName' => 'Gamingue']));
 
         return redirect(route('checkouts.thanks'));
