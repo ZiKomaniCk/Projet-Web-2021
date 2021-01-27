@@ -21,7 +21,6 @@
         <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
 </div>
-{{-- {{  }} --}}
 
 
 <div class="container" style="background-color: #333333;">   
