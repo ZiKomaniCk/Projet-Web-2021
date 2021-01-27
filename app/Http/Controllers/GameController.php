@@ -22,9 +22,24 @@ class GameController extends Controller
         $this->middleware('auth', ['except' => ['index','show']]);
     }
 
-    public function index()
+    public function index(Request $request)
     {
         $games = Game::where('visible', '=', 1)->paginate(6);
+        $platform = $request->platform;
+        if(!(empty($platform))){
+            if(!empty($request->search)){
+                $games = Game::where('name', 'like', '%' . $request->search . '%')
+                    ->where('visible', '=', 1)
+                    ->where('platform', '=', $request->platform)
+                    ->paginate(6);
+            }else{
+                $games = Game::where('visible', '=', 1)
+                    ->where('platform', '=', $request->platform)
+                    ->paginate(6);
+            }
+            
+        }
+
         return view('games.index', ['games' => $games]);
     }
 
@@ -36,10 +51,16 @@ class GameController extends Controller
      */
     public function show(Game $game)
     {
-        $user = User::find(Auth::user()->id);
-        if($game->visible == 1 || $user->hasRole('admin')){
+        
+        if($game->visible == 1 ){
             return view('games.show', ['game' => $game]);
         }else{
+            if(Auth::user()){
+                $user = User::find(Auth::user()->id);
+                if( $user->hasRole('admin')){
+                    return view('games.show', ['game' => $game]);
+                }
+            }
             return redirect(route('games.index'));
         }
     }
