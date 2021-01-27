@@ -30,6 +30,7 @@ class HomeController extends Controller
         foreach($user->orders as $order){
             foreach(unserialize($order->products) as $product){
                 $game = Game::find($product[3]);
+                $game->myOrder = $order->id;
                 $game->qty = $product[2];
                 $games[] = $game;
             }

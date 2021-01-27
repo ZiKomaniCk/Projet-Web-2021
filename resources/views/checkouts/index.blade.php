@@ -38,8 +38,7 @@
                 <div class="card-body">
                     <p class="card-text fs-4 ml-3">Prix à payer : {{ Cart::total() }} €</p>
                     <p class="card-text fs-4 ml-3">Votre Solde : {{ Auth::user()->credit }} €</p>
-                        
-                
+
                 @if (Auth::user()->credit >= Cart::total())
                     </div>
                     <form action="{{ route('checkouts.storeSolde') }}" method="POST"  class="m-5">

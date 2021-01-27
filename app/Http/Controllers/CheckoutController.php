@@ -118,7 +118,6 @@ class CheckoutController extends Controller
     public function storeSolde(Request $request)
     {
         $order = new Order();
-        // dd(getPriceSolde(Cart::total()));
         $order->amount = getPriceSolde(Cart::total());
         $order->payment_created_at = date('Y-m-d H:i:s');
 
@@ -141,7 +140,6 @@ class CheckoutController extends Controller
                     $game->visible = 0;
                 }
                 $game->save();
-                // ($product->qty - $game->quantity)
             }else{
                 Session::flash('danger', 'Votre commande a été interrompu, il ne reste plus assez de jeux.');
                 return( response()->json(['error' => 'Payment Intent Not Succeeded']));
