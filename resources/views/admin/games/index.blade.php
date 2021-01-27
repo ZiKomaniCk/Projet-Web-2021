@@ -25,6 +25,7 @@
                             <th scope="col">Prix</th>
                             <th scope="col">Editeur</th>
                             <th scope="col">Visible</th>
+                            <th scope="col" style="text-align: center">Note moyenne</th>
                             <th scope="col">Date de sortie</th>
                             <th scope="col">Actions</th>
                         </tr>
@@ -43,6 +44,7 @@
                                 Caché
                                 @endif 
                             </td>
+                            <td style="text-align: center">{{ ($game->reviews->avg('rate')) }}</td>
                             <td>{{ $game->releaseDate }}</td>
                             <td>
                                 <form action="{{ route('admin.games.destroy', ['game' => $game]) }}" method="POST" >
