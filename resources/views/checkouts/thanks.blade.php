@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container"><h1 class="text-white">Merci Monsieur</h1></div>
+<div class="container text-white py-5 text-center">
+    <h4 class="display-5">Merci de votre achat !</h4>
+    <p class="lead mb-0">Vous allez recevoir votre facture par mail dans peu de temps</p> <hr>
+    <a class="lead mt-4 fs-5" href="{{ route('games.index') }}">Page d'accueil</a>
+  </div>
 @endsection

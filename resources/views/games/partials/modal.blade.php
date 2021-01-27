@@ -14,7 +14,7 @@
                 
                 <form method="POST" action="{{ route('carts.store', ['id' => $game->id, 'name' =>$game->name, 'price' => $game->price]) }}">
                     @csrf
-                    <button type="submit" class="btn btn-primary text-white">Ajouter au pannier</button>
+                    <button type="submit" class="btn btn-primary text-white">Ajouter au panier</button>
                 </form>
             </div>
         </div>
