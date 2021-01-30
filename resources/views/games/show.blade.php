@@ -6,7 +6,7 @@
     <div class="card mb-3 rounded-2" >
         <div class="row g-0">
             <div class="col-md-4">
-                <img src="{{ $game->pathImage }}" alt="image du jeu" style="width: 390px; height: 565px;">
+                <img src="{{ $game->pathImage }}" class="img-game" alt="image du jeu" style="width: 390px; height: 565px;">
             </div>
             <div class="col-md-8">
                 <div class="card-body ml-4">
