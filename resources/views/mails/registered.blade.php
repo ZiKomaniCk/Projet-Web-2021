@@ -187,7 +187,7 @@
                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:middle;" width="100%">
                   <tr>
                     <td align="left" style="font-size:0px;padding:10px 25px;padding-right:25px;padding-left:25px;word-break:break-word;">
-                      <div style="font-family:open Sans Helvetica, Arial, sans-serif;font-size:22px;line-height:1;text-align:left;color:#ffffff;"><span style="color:#149e42; font-weight:bold;">Bonjour ! {{$firstName}}</span><br /><br /> Bienvenue sur notre site.</div>
+                      <div style="font-family:open Sans Helvetica, Arial, sans-serif;font-size:22px;line-height:1;text-align:left;color:#ffffff;"><span style="color:#149e42; font-weight:bold;">Bonjour {{$firstName}} !</span><br /><br /> Bienvenue sur notre site.</div>
                     </td>
                   </tr>
                   <tr>
