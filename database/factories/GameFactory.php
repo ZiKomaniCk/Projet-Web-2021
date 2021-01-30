@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Game::class, function (Faker $faker) {
     return [
-        'name' => $faker->company,
+        'name' => $faker->randomElement(['Nom du jeu trop cool', 'Nom du jeu', 'Nom du jeu pas cool', 'Encore le nom du jeu', "Oui, c'est le nom du jeu"]),
         'price' => $faker->numberBetween($min = 30, $max = 70),
         'score' => $faker->numberBetween($min = 0, $max = 20),
         'quantity' => $faker->numberBetween($min = 10, $max = 50),
