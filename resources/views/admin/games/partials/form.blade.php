@@ -157,16 +157,16 @@
     <div class="col-md-6">
         <div class="mt-2">
             <select id="platform" class="custom-select" name="platform">
-                <option selected value="XBOX">XBOX</option>
-                <option value="Playsation 3">Playsation 3</option>
-                <option value="Playsation 4">Playsation 4</option>
-                <option value="XBOX ONE">XBOX ONE</option>
-                <option value="XBOX 360">XBOX 360</option>
-                <option value="Nintendo Wii">Nintendo Wii</option>
-                <option value="Nintendo Switch">Nintendo Switch</option>
-                <option value="Playsation 1">Playsation 1</option>
-                <option value="PC">PC</option>
-                <option value="Playsation 2">Playsation 2</option>
+                <option @if($game ?? '' && $game->platform == 'XBOX') selected @endif value="XBOX">XBOX</option>
+                <option @if($game ?? '' && $game->platform == 'Playsation 3') selected @endif value="Playsation 3">Playsation 3</option>
+                <option @if($game ?? '' && $game->platform == 'Playsation 4') selected @endif value="Playsation 4">Playsation 4</option>
+                <option @if($game ?? '' && $game->platform == 'XBOX ONE') selected @endif value="XBOX ONE">XBOX ONE</option>
+                <option @if($game ?? '' && $game->platform == 'XBOX 360') selected @endif value="XBOX 360">XBOX 360</option>
+                <option @if($game ?? '' && $game->platform == 'Nintendo Wii') selected @endif value="Nintendo Wii">Nintendo Wii</option>
+                <option @if($game ?? '' && $game->platform == 'Nintendo Switch') selected @endif value="Nintendo Switch">Nintendo Switch</option>
+                <option @if($game ?? '' && $game->platform == 'Playsation 1') selected @endif value="Playsation 1">Playsation 1</option>
+                <option @if($game ?? '' && $game->platform == 'PC') selected @endif value="PC">PC</option>
+                <option @if($game ?? '' && $game->platform == 'Playsation 2') selected @endif value="Playsation 2">Playsation 2</option>
             </select>
         </div>
     </div>
