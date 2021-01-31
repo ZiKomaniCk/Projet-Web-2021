@@ -45,7 +45,7 @@
                                 <p class="card-text fs-5 fw-bold">{{$game->price}}€</p>
                             </div>
                         </div>
-                        <a href="{{ route('games.show', ['game' => $game]) }}" class="btn btn-primary text-white" style="float:right ;">Voir plus</a>
+                        <a href="{{ route('games.show', ['game' => $game]) }}" class="btn btn-primary text-white" style="float:right ;">Plus d'info</a>
                     </div>
                 </div>
             </div>
