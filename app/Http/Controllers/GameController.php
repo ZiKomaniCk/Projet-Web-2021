@@ -26,16 +26,26 @@ class GameController extends Controller
     {
         $games = Game::where('visible', '=', 1)->paginate(6);
         $platform = $request->platform;
+        
         if(!(empty($platform))){
             if(!empty($request->search)){
-                $games = Game::where('name', 'like', '%' . $request->search . '%')
+                if($platform == 'null'){
+                    $games = Game::where('name', 'like', '%' . $request->search . '%')
+                    ->where('visible', '=', 1)
+                    ->paginate(6);
+                }else{
+                    $games = Game::where('name', 'like', '%' . $request->search . '%')
                     ->where('visible', '=', 1)
                     ->where('platform', '=', $request->platform)
                     ->paginate(6);
+                }
             }else{
-                $games = Game::where('visible', '=', 1)
+                if($platform != 'null'){
+                    $games = Game::where('visible', '=', 1)
                     ->where('platform', '=', $request->platform)
                     ->paginate(6);
+                }
+                
             }
             
         }

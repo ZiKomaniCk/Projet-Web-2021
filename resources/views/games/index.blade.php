@@ -6,9 +6,8 @@
 <div class="container mb-2" >
     <form class="d-flex" >
         <input class="form-control me-2 bg-gray2e border-primary" name='search' type="search" placeholder="Faire une recherche..."  aria-label="Search">
-        <select class="form-select bg-gray2e text-white border-white mr-2" name="platform" style="max-width: 17rem; >
-            <option selected value="#">Selectionner une plateforme</option>
-            <option value="#">Selectionner une plateforme</option>
+        <select class="form-select bg-gray2e text-white border-white mr-2" name="platform" style="max-width: 17rem; ">
+            <option selected value="null">Selectionner une plateforme</option>
             <option value="XBOX 360">XBOX 360</option>
             <option value="XBOX ONE">XBOX ONE</option>
             <option value="Playsation 1">Playsation 1</option>
