@@ -141,13 +141,13 @@
     </main>
 </div>
 
-<footer class="site-footer border-top border-primary">
+<footer class="site-footer border-top border-bottom border-primary">
     <div class="container">
       <div class="row">
         <div class="col-sm-12 col-md-6">
           <h6>A propos</h6>
           <p class="text-justify">Ce site a été fait dans le cadre de nos projets finaux a Ynov. 
-              Tous ce que vous verrez ici n'est que fictif et à été fait pour remplir le site de contenu.</p>
+              Tout ce que vous verrez ici n'est que fictif et à été fait pour remplir le site de contenu.</p>
               <p>Si vous voulez nous donner votre avis sur le site n'hésitez pas : <strong>totolefrero31@gmail.com</strong></p>
         </div>
 
