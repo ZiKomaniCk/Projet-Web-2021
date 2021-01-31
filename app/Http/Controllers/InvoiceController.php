@@ -33,9 +33,9 @@ class InvoiceController extends Controller
 
             $client = new Party([
                 'name'          => 'Gamingue',
-                'phone'         => '06 07 38 45 33',
                 'custom_fields' => [
-                    'order number' => $myOrder->id,
+                    'Téléphone'         => '06 07 38 45 33',
+                    'numéro de commande' => $myOrder->id,
                 ],
             ]);
 

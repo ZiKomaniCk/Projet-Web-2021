@@ -37,7 +37,7 @@
                         </h1>
                     </td>
                     <td class="border-0 pl-0">
-                        <p>{{ __('invoices::invoice.date') }}: <strong>{{ $invoice->getDate() }}</strong></p>
+                        <p>{{ __('Facture générée le') }} <strong>{{ $invoice->getDate() }}</strong></p>
                     </td>
                 </tr>
             </tbody>
@@ -141,19 +141,19 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col" class="border-0 pl-0">{{ __('invoices::invoice.service') }}</th>
+                    <th scope="col" class="border-0 pl-0">{{ __('Jeux') }}</th>
                     @if($invoice->hasItemUnits)
                         <th scope="col" class="text-center border-0">{{ __('invoices::invoice.units') }}</th>
                     @endif
-                    <th scope="col" class="text-center border-0">{{ __('invoices::invoice.quantity') }}</th>
-                    <th scope="col"  class="text-right border-0">{{ __('invoices::invoice.price') }}</th>
+                    <th scope="col" class="text-center border-0">{{ __('Qt.') }}</th>
+                    <th scope="col"  class="text-right border-0">{{ __('Prix') }}</th>
                     @if($invoice->hasItemDiscount)
                         <th scope="col" class="text-right border-0">{{ __('invoices::invoice.discount') }}</th>
                     @endif
                     @if($invoice->hasItemTax)
                         <th scope="col" class="text-right border-0">{{ __('invoices::invoice.tax') }}</th>
                     @endif
-                    <th scope="col" class="text-right border-0 pr-0" style="padding-left: 30px;">{{ __('invoices::invoice.sub_total') }}</th>
+                    <th scope="col" class="text-right border-0 pr-0" style="padding-left: 30px;">{{ __('Total') }}</th>
                 </tr>
             </thead>
             <tbody>
@@ -192,19 +192,19 @@
                         </td>
                     </tr>
                 @endif
-                @if($invoice->taxable_amount)
+                {{-- @if($invoice->taxable_amount)
                     <tr>
                         <td colspan="{{ $invoice->table_columns - 2 }}"class="border-0"></td>
-                        <td class="text-right pl-0" >{{ __('invoices::invoice.taxable_amount') }}</td>
+                        <td class="text-right pl-0" >{{ __('Total') }}</td>
                         <td class="text-right pr-0" style="padding: 15px; padding-left: 50px;">
                             {{ $invoice->formatCurrency($invoice->taxable_amount) }}
                         </td>
                     </tr>
-                @endif
+                @endif --}}
                 @if($invoice->tax_rate)
                     <tr>
                         <td colspan="{{ $invoice->table_columns - 2 }}" class="border-0"></td>
-                        <td class="text-right pl-0">{{ __('invoices::invoice.tax_rate') }}</td>
+                        <td class="text-right pl-0">{{ __('Taxe') }}</td>
                         <td class="text-right pr-0" style="padding: 15px; padding-left: 50px;">
                             {{ $invoice->tax_rate }}%
                         </td>
@@ -213,7 +213,7 @@
                 @if($invoice->hasItemOrInvoiceTax())
                     <tr>
                         <td colspan="{{ $invoice->table_columns - 2 }}" class="border-0"></td>
-                        <td class="text-right pl-0">{{ __('invoices::invoice.total_taxes') }}</td>
+                        <td class="text-right pl-0">{{ __('Taxe totale') }}</td>
                         <td class="text-right pr-0" style="padding: 15px; padding-left: 50px;">
                             {{ $invoice->formatCurrency($invoice->total_taxes) }}
                         </td>
@@ -221,7 +221,7 @@
                 @endif
                     <tr>
                         <td colspan="{{ $invoice->table_columns - 2 }}" class="border-0"></td>
-                        <td class="text-right pl-0">{{ __('invoices::invoice.total_amount') }}</td>
+                        <td class="text-right pl-0">{{ __('Montant final') }}</td>
                         <td class="text-right pr-0 total-amount" style="padding: 15px; padding-left: 30px;">
                             {{ $invoice->formatCurrency($invoice->total_amount) }}
                         </td>
@@ -230,7 +230,7 @@
         </table>
 
         <p>
-            {{ trans('invoices::invoice.amount_in_words') }}: {{ $invoice->getTotalAmountInWords() }}
+            {{ trans('Prix en toutes lettres') }}: {{ $invoice->getTotalAmountInWords() }}
         </p>
         
         <script type="text/php">
