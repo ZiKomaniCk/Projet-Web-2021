@@ -168,7 +168,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-8 col-sm-6 col-xs-12">
-          <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved. <span class="float-right">S/O Don Dada, L'entourage, Grande Ville Cool, Connexion</span>
+          <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved. <span class="float-right">S/O Don Dada, L'entourage, Grande Ville Cool, Connexion, EKIP</span>
           </p>
         </div>
 

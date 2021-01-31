@@ -115,7 +115,8 @@
     <div class="container text-white py-5 text-center">
         <h4 class="display-5">Votre panier est vide</h4>
         <p class="lead mb-0">Ajouter des jeux a votre panier <a href="{{ route('games.index') }}">liste des jeux</a></p>
-      </div>
+    </div>
+    <div class="container" style="height: 280px;"></div>
     @endif
         
 @endsection
@@ -152,4 +153,5 @@
             })
         })
     </script>
+
 @endsection
