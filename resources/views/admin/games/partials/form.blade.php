@@ -72,7 +72,7 @@
     <div id="status" class="col-md-6">
         <div class="mt-2">
             <input type="radio" name="visible" value="1"
-            @if (  $game->visible == 1 || $update == 'no') checked @endif>
+            @if ($game ?? '' &&  $game->visible == 1 || $update == 'no') checked @endif>
             <label>Visible</label>
         </div>
         <div class="mt-2">
