@@ -127,7 +127,7 @@
         <div class="mt-2">
             <select id="pegi" class="custom-select" name="pegi">
                 @foreach ($pegi as $int)
-                <option @if ($game ?? '' && $game->pegi == $int) selected @endif
+                <option @if (($game ?? '') && ($game->pegi == $int)) selected @endif
                     value="{{$int}}">Pegi {{$int}}
                 </option>
                 @endforeach
@@ -142,7 +142,7 @@
         <div class="mt-2">
             <select id="genre_id" class="custom-select" name="genre_id">
                 @foreach ($genres as $genre)
-                <option @if ($game ?? '' && $game->genre_id == $genre->id) selected @endif
+                <option @if (($game ?? '') && ($game->genre_id == $genre->id)) selected @endif
                     value="{{$genre->id}}">{{$genre->name}} {{$genre->type}}
                 </option>
                 @endforeach
@@ -157,16 +157,16 @@
     <div class="col-md-6">
         <div class="mt-2">
             <select id="platform" class="custom-select" name="platform">
-                <option @if($game ?? '' && $game->platform == 'XBOX') selected @endif value="XBOX">XBOX</option>
-                <option @if($game ?? '' && $game->platform == 'Playsation 3') selected @endif value="Playsation 3">Playsation 3</option>
-                <option @if($game ?? '' && $game->platform == 'Playsation 4') selected @endif value="Playsation 4">Playsation 4</option>
-                <option @if($game ?? '' && $game->platform == 'XBOX ONE') selected @endif value="XBOX ONE">XBOX ONE</option>
-                <option @if($game ?? '' && $game->platform == 'XBOX 360') selected @endif value="XBOX 360">XBOX 360</option>
-                <option @if($game ?? '' && $game->platform == 'Nintendo Wii') selected @endif value="Nintendo Wii">Nintendo Wii</option>
-                <option @if($game ?? '' && $game->platform == 'Nintendo Switch') selected @endif value="Nintendo Switch">Nintendo Switch</option>
-                <option @if($game ?? '' && $game->platform == 'Playsation 1') selected @endif value="Playsation 1">Playsation 1</option>
-                <option @if($game ?? '' && $game->platform == 'PC') selected @endif value="PC">PC</option>
-                <option @if($game ?? '' && $game->platform == 'Playsation 2') selected @endif value="Playsation 2">Playsation 2</option>
+                <option @if(($game ?? '') && ($game->platform == 'XBOX')) selected @endif value="XBOX">XBOX</option>
+                <option @if(($game ?? '') && ($game->platform == 'Playsation 3')) selected @endif value="Playsation 3">Playsation 3</option>
+                <option @if(($game ?? '') && ($game->platform == 'Playsation 4')) selected @endif value="Playsation 4">Playsation 4</option>
+                <option @if(($game ?? '') && ($game->platform == 'XBOX ONE')) selected @endif value="XBOX ONE">XBOX ONE</option>
+                <option @if(($game ?? '') && ($game->platform == 'XBOX 360')) selected @endif value="XBOX 360">XBOX 360</option>
+                <option @if(($game ?? '') && ($game->platform == 'Nintendo Wii')) selected @endif value="Nintendo Wii">Nintendo Wii</option>
+                <option @if(($game ?? '') && ($game->platform == 'Nintendo Switch')) selected @endif value="Nintendo Switch">Nintendo Switch</option>
+                <option @if(($game ?? '') && ($game->platform == 'Playsation 1')) selected @endif value="Playsation 1">Playsation 1</option>
+                <option @if(($game ?? '') && ($game->platform == 'PC')) selected @endif value="PC">PC</option>
+                <option @if(($game ?? '') && ($game->platform == 'Playsation 2')) selected @endif value="Playsation 2">Playsation 2</option>
             </select>
         </div>
     </div>
