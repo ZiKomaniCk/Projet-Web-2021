@@ -194,7 +194,7 @@
                   </tr>
                   <tr>
                     <td align="left" style="font-size:0px;padding:10px 25px;padding-right:25px;padding-left:25px;word-break:break-word;">
-                      <div style="font-family:open Sans Helvetica, Arial, sans-serif;font-size:16px;line-height:1;text-align:left;color:#ffffff;">Votre paiement de {{$gamePrice}}€ a bien été effectué. <br /><br /> Voici la/les clées :</div>
+                      <div style="font-family:open Sans Helvetica, Arial, sans-serif;font-size:16px;line-height:1;text-align:left;color:#ffffff;">Votre paiement de <span style="color:#149e42; font-size: 30px;">{{$gamePrice}}</span>€ a bien été effectué. <br /><br /> Voici la/les clées :</div>
                     </td>
                   </tr>
                   <tr>
