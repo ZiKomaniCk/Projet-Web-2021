@@ -19,14 +19,4 @@ class OrderController extends Controller
         return view('admin.orders.index', ['orders' => $orders]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Order $order)
-    {
-        //
-    }
 }
