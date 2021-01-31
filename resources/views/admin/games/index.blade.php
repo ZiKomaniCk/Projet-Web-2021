@@ -51,7 +51,7 @@
                                     <a href="{{ route('admin.games.edit', ['game' => $game]) }}" type="button" class="btn btn-primary pt-2 pb-2 ">Modifier</a>
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger pt-2 pb-2 ">Supprimer</button>
+                                    <button type="submit" class="btn btn-danger mt-2 pb-2 ">Supprimer</button>
                                 </form>
                                 <a href="{{ route('games.show', ['game' => $game]) }}" type="button" class="btn btn-info text-white pl-5 pr-5 pt-2 pb-2 mt-2">Voir plus</a>
                             </td>
