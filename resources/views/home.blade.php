@@ -55,7 +55,7 @@
                   <p class="card-text fs-6 fw-bold">x{{$game->qty}}</p>
                 </div>
               </div>
-              <a href="{{ route('games.show', ['game' => $game]) }}" class="btn btn-primary text-white mr-2">Voir plus</a>
+              <a href="{{ route('games.show', ['game' => $game]) }}" class="btn btn-primary text-white mr-2">Plus d'info</a>
               <a href="{{ route('pdf.show', ['myOrder' => $game->myOrder]) }}" class="btn btn-primary text-white">Voir facture</a>
               @if ($user->hasReview($game->id))
               <a href="{{ route('reviews.show', ['review' => $user->getReview($game->id)]) }}" class="btn btn-primary text-white">Voir Avis</a>
