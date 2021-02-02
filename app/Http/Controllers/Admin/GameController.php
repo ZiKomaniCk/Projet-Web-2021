@@ -7,6 +7,7 @@ use App\Genre;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Faker\Generator as Faker;
+use Stripe\Product;
 
 class GameController extends Controller
 {
