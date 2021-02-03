@@ -53,7 +53,7 @@
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger mt-2 pb-2 ">Supprimer</button>
                                 </form>
-                                <a href="{{ route('games.show', ['game' => $game]) }}" type="button" class="btn btn-info text-white pl-5 pr-5 pt-2 pb-2 mt-2">Voir plus</a>
+                                <a href="{{ route('games.show', ['game' => $game]) }}" type="button" class="btn btn-info text-white pl-3 pr-3 pt-2 pb-2 mt-2">Voir plus</a>
                             </td>
                         </tr>
                         @endforeach
