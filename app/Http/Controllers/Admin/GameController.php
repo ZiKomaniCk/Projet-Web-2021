@@ -7,6 +7,7 @@ use App\Genre;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Faker\Generator as Faker;
+use Stripe\Product;
 
 class GameController extends Controller
 {
@@ -125,7 +126,6 @@ class GameController extends Controller
         $game->reviews()->each(function($review){
             $review->delete();
         });
-        $game->users()->detach();
         $game->delete();
         return redirect(route('admin.games.index'));
     }
